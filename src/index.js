@@ -1,10 +1,21 @@
 import './style.css';
+import toAddItem from './navigation';
 
-function component() {
-  const element = document.createElement('div');
-  element.innerHTML = 'hi!';
-  element.classList.add('hello');
-  return element;
+function setContentParent() {
+  const div = document.createElement('div');
+  div.setAttribute('id', 'parent');
+  return div;
 }
 
-document.body.appendChild(component());
+function addItemBtn() {
+  const btn = document.createElement('button');
+  btn.innerHTML = 'Add an item';
+  btn.setAttribute('id', 'add-item-btn');
+  return btn;
+}
+
+document.body.appendChild(setContentParent());
+const parent = document.querySelector('#parent');
+parent.appendChild(addItemBtn());
+
+toAddItem();
