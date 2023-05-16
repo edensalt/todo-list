@@ -1,5 +1,6 @@
 import { createFormField, createDataList, createSubmitBtn } from './form_components';
-import { createItem, masterList } from '../modules/list-item';
+import { createItem, masterList } from '../modules/list_item';
+import RenderToDoList from './list';
 
 const ItemForm = function () {
   const container = document.querySelector('#form-container');
@@ -16,6 +17,13 @@ const ItemForm = function () {
   createSubmitBtn(form, 'submit', 'submit-button', 'Add item');
 };
 
+function resetList() {
+  const listContainer = document.querySelector('#list-container');
+  while (listContainer.firstChild) {
+    listContainer.removeChild(listContainer.firstChild);
+  }
+}
+
 const AddItem = function () {
   const submit = document.querySelector('#submit-button');
   submit.addEventListener('click', (e) => {
@@ -25,6 +33,8 @@ const AddItem = function () {
     const dueDate = document.querySelector('#due-date').value;
     const priority = document.querySelector('#priority').value;
     createItem(title, description, dueDate, priority);
+    resetList();
+    RenderToDoList();
     console.table(masterList);
   });
 };

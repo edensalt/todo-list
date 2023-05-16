@@ -1,10 +1,6 @@
 import './style.css';
 import toAddItem from './navigation';
-// Add items for testing, styling
-import { masterList } from './modules/list-item';
 import RenderToDoList from './components/list';
-
-console.table(masterList);
 
 function setContentParent() {
   const div = document.createElement('div');
