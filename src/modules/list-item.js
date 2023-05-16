@@ -24,4 +24,7 @@ const createItem = (title, description, dueDate, priority) => {
   return item;
 };
 
+createItem('Make bed', 'Tidy sheets, fluff pillows.', '1/1/23', 2);
+createItem('Wash dishes', 'Use soap, dry dishes, put them away', '4/1/23', 3);
+
 export { createItem, masterList };

@@ -19,7 +19,6 @@ const ItemForm = function () {
 const AddItem = function () {
   const submit = document.querySelector('#submit-button');
   submit.addEventListener('click', (e) => {
-    console.log('submit new task!');
     e.preventDefault();
     const title = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;

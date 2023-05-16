@@ -1,4 +1,4 @@
-import AddItemForm from '../components/item_form';
+import AddItemForm from '../components/form';
 
 const toAddItem = function () {
   const addItemBtn = document.querySelector('#add-item-btn');
