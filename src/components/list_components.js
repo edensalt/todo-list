@@ -1,9 +1,16 @@
-// import { masterList } from '../modules/list-item';
+import removeItem from '../modules/remove_list_item';
+import { masterList } from '../modules/create_list_item';
 
-function addDoneBtn(card) {
+function addDoneBtn(item, card) {
   const btn = document.createElement('button');
   btn.innerHTML = 'Complete';
   btn.setAttribute('id', 'task-complete');
+  const index = masterList.indexOf(item);
+  btn.setAttribute('index', index);
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    removeItem(e);
+  });
   card.appendChild(btn);
 }
 
