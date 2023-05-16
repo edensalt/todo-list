@@ -13,4 +13,24 @@ function addTitle(item, card) {
   card.appendChild(para);
 }
 
-export { addDoneBtn, addTitle };
+function addDescription(item, card) {
+  const para = document.createElement('p');
+  para.innerHTML = item.description;
+  card.appendChild(para);
+}
+
+function addDueDate(item, card) {
+  const para = document.createElement('p');
+  para.innerHTML = item.dueDate;
+  card.appendChild(para);
+}
+
+function addPriority(item, card) {
+  const para = document.createElement('p');
+  para.innerHTML = item.priority;
+  card.appendChild(para);
+}
+
+export {
+  addDoneBtn, addTitle, addDescription, addDueDate, addPriority,
+};
