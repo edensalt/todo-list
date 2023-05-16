@@ -1,10 +1,10 @@
 import './style.css';
 
 function component() {
-    const element = document.createElement('div');
-    element.innerHTML = 'hi!';
-    element.classList.add('hello');
-    return element;
+  const element = document.createElement('div');
+  element.innerHTML = 'hi!';
+  element.classList.add('hello');
+  return element;
 }
 
 document.body.appendChild(component());
