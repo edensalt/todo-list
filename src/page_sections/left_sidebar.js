@@ -3,12 +3,12 @@ const LeftSideBar = function () {
 
   const projects = document.createElement('div');
   projects.setAttribute('id', 'projects');
-  projects.classList.add('bg-yellow-100');
+  projects.classList.add('bg-yellow-100', 'border-2');
 
   const projectHeader = document.createElement('h2');
   projectHeader.setAttribute('id', 'project-header');
   projectHeader.classList.add('text-2xl', 'font-bold', 'flex', 'justify-center', 'py-10');
-  projectHeader.innerHTML = 'Project List';
+  projectHeader.innerHTML = 'Projects';
 
   const projectList = document.createElement('div');
   projectList.setAttribute('id', 'project-div');

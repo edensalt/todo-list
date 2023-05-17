@@ -33,7 +33,7 @@ const createDataList = function (
   option3.value = value3;
 
   container.appendChild(field);
-  container.appendChild(datalist);
+  field.appendChild(datalist);
   datalist.appendChild(option1);
   datalist.appendChild(option2);
   datalist.appendChild(option3);
