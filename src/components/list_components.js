@@ -20,30 +20,36 @@ function addDoneBtn(item, card) {
 function addTitle(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.title;
+  para.classList.add('item');
   card.appendChild(para);
 }
 
 function addDescription(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.description;
+  para.classList.add('item');
   card.appendChild(para);
 }
 
 function addProject(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.project;
+  para.classList.add('item');
   card.appendChild(para);
 }
 
 function addPriority(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.priority;
+  para.classList.add('item');
+  para.classList.add('item');
   card.appendChild(para);
 }
 
 function addDueDate(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.dueDate;
+  para.classList.add('item');
   card.appendChild(para);
 }
 

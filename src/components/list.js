@@ -12,7 +12,7 @@ const RenderToDoList = function () {
   masterList.forEach((item) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'list-item');
-    card.classList.add('grid', 'grid-cols-list');
+    card.classList.add('grid', 'grid-cols-list', 'gap-list', 'items-center', 'my-[5px]');
     addTitle(item, card);
     addDescription(item, card);
     addProject(item, card);

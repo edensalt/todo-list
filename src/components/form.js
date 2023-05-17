@@ -1,5 +1,5 @@
 import { createFormField, createDataList, createSubmitBtn } from './form_components';
-import { createItem, masterList } from '../modules/create_list_item';
+import { createItem } from '../modules/create_list_item';
 import RenderToDoList from './list';
 
 const ItemForm = function () {
@@ -7,7 +7,7 @@ const ItemForm = function () {
 
   const form = document.createElement('form');
   form.setAttribute('id', 'item-form');
-  form.classList.add('grid', 'grid-cols-list');
+  form.classList.add('grid', 'grid-cols-list', 'gap-list');
 
   container.appendChild(form);
 
@@ -34,7 +34,6 @@ const AddItem = function () {
     const form = document.querySelector('#item-form');
     form.reset();
     RenderToDoList();
-    console.table(masterList);
   });
 };
 
@@ -42,6 +41,7 @@ const AddItemForm = function () {
   const parent = document.querySelector('#items');
   const container = document.createElement('div');
   container.setAttribute('id', 'form-container');
+  container.classList.add('mb-10');
   parent.appendChild(container);
 
   ItemForm();

@@ -1,6 +1,7 @@
 const createFormField = function (container, type, id, name, placeholder) {
   const field = document.createElement('input');
   field.type = type;
+  field.classList.add('item');
   field.id = id;
   field.name = name;
   field.placeholder = placeholder;
@@ -23,6 +24,7 @@ const createDataList = function (
   field.name = name;
   field.id = id;
   field.type = type;
+  field.classList.add('item');
   const datalist = document.createElement('datalist');
   datalist.id = list;
   const option1 = document.createElement('option');
@@ -44,6 +46,7 @@ const createSubmitBtn = function (container, type, id, innerHTML) {
   btn.type = type;
   btn.id = id;
   btn.innerHTML = innerHTML;
+  btn.classList.add('btn-complete');
   container.appendChild(btn);
 };
 
