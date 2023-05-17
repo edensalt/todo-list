@@ -6,10 +6,12 @@ const NavBar = function () {
 
   const logo = document.createElement('h1');
   logo.setAttribute('id', 'logo');
+  logo.classList.add('text-4xl', 'font-bold', 'flex', 'justify-center', 'py-10');
   logo.innerHTML = 'To-Do List';
 
   const pageContent = document.createElement('div');
   pageContent.setAttribute('id', 'main');
+  pageContent.classList.add('flex');
 
   parent.appendChild(navBar);
   navBar.appendChild(logo);

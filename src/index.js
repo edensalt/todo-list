@@ -1,6 +1,6 @@
 import './style.css';
 import HomePage from './pages/homepage';
-import NavBar from './components/navbar';
+import NavBar from './page_sections/navbar';
 
 function setContentParent() {
   const div = document.createElement('div');
