@@ -5,6 +5,7 @@ import RenderToDoList from './components/list';
 function setContentParent() {
   const div = document.createElement('div');
   div.setAttribute('id', 'parent');
+  div.classList.add('bg-lime-500', 'border-orange-800');
   return div;
 }
 

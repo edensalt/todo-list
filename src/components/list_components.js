@@ -1,5 +1,13 @@
 import removeItem from '../modules/remove_list_item';
 import { masterList } from '../modules/create_list_item';
+import RenderToDoList from './list';
+
+function resetList() {
+  const listContainer = document.querySelector('#list-container');
+  while (listContainer.firstChild) {
+    listContainer.removeChild(listContainer.firstChild);
+  }
+}
 
 function addDoneBtn(item, card) {
   const btn = document.createElement('button');
@@ -10,6 +18,8 @@ function addDoneBtn(item, card) {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     removeItem(e);
+    resetList();
+    RenderToDoList();
   });
   card.appendChild(btn);
 }
