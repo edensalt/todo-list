@@ -12,8 +12,9 @@ const ItemForm = function () {
 
   createFormField(form, 'text', 'title', 'title', 'task title here');
   createFormField(form, 'text', 'description', 'description', 'task description here');
-  createFormField(form, 'date', 'due-date', 'due-date', '');
+  createFormField(form, 'text', 'project', 'project', 'project here');
   createDataList(form, 'priority-list', 'priority', 'priority', 'tel', 1, 2, 3);
+  createFormField(form, 'date', 'due-date', 'due-date', '');
   createSubmitBtn(form, 'submit', 'submit-button', 'Add item');
 };
 
@@ -30,9 +31,10 @@ const AddItem = function () {
     e.preventDefault();
     const title = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
-    const dueDate = document.querySelector('#due-date').value;
+    const project = document.querySelector('#project').value;
     const priority = document.querySelector('#priority').value;
-    createItem(title, description, dueDate, priority);
+    const dueDate = document.querySelector('#due-date').value;
+    createItem(title, description, project, priority, dueDate);
     resetList();
     RenderToDoList();
     console.table(masterList);

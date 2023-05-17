@@ -1,6 +1,6 @@
 import { masterList } from '../modules/create_list_item';
 import {
-  addDoneBtn, addTitle, addDescription, addDueDate, addPriority,
+  addDoneBtn, addTitle, addDescription, addDueDate, addPriority, addProject,
 } from './list_components';
 
 const RenderToDoList = function () {
@@ -14,8 +14,9 @@ const RenderToDoList = function () {
     addDoneBtn(item, card);
     addTitle(item, card);
     addDescription(item, card);
-    addDueDate(item, card);
+    addProject(item, card);
     addPriority(item, card);
+    addDueDate(item, card);
     container.appendChild(card);
   });
   parent.appendChild(container);

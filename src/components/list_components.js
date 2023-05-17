@@ -37,9 +37,9 @@ function addDescription(item, card) {
   card.appendChild(para);
 }
 
-function addDueDate(item, card) {
+function addProject(item, card) {
   const para = document.createElement('p');
-  para.innerHTML = item.dueDate;
+  para.innerHTML = item.project;
   card.appendChild(para);
 }
 
@@ -49,6 +49,12 @@ function addPriority(item, card) {
   card.appendChild(para);
 }
 
+function addDueDate(item, card) {
+  const para = document.createElement('p');
+  para.innerHTML = item.dueDate;
+  card.appendChild(para);
+}
+
 export {
-  addDoneBtn, addTitle, addDescription, addDueDate, addPriority,
+  addDoneBtn, addTitle, addDescription, addProject, addPriority, addDueDate,
 };
