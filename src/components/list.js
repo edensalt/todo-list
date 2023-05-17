@@ -3,7 +3,7 @@ import {
   addDoneBtn, addTitle, addDescription, addDueDate, addPriority, addProject,
 } from './list_components';
 
-const RenderToDoList = function () {
+const RenderToDoList = function renderItemList() {
   const parent = document.querySelector('#main-content');
   // Check if list exists. If yes, remove items and re-render. If no, render.
   const container = document.createElement('div');

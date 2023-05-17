@@ -12,5 +12,6 @@
     },
     "ignorePatterns": ["*.bundle.js"],
     "rules": {
+        "func-names": "off"
     }
 }

@@ -8,7 +8,16 @@ const createFormField = function (container, type, id, name, placeholder) {
   container.appendChild(field);
 };
 
-const createDataList = function (container, list, name, id, type, value1, value2, value3) {
+const createDataList = function (
+  container,
+  list,
+  name,
+  id,
+  type,
+  value1,
+  value2,
+  value3,
+) {
   const field = document.createElement('input');
   field.setAttribute('list', list);
   field.name = name;

@@ -2,7 +2,7 @@ import { createFormField, createDataList, createSubmitBtn } from './form_compone
 import { createItem, masterList } from '../modules/create_list_item';
 import RenderToDoList from './list';
 
-const ItemForm = function () {
+const ItemForm = function createForm() {
   const container = document.querySelector('#form-container');
 
   const form = document.createElement('form');
