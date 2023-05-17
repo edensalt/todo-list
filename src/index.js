@@ -1,6 +1,6 @@
 import './style.css';
-import toAddItem from './navigation';
-import RenderToDoList from './components/list';
+import HomePage from './pages/homepage';
+import NavBar from './components/navbar';
 
 function setContentParent() {
   const div = document.createElement('div');
@@ -9,16 +9,6 @@ function setContentParent() {
   return div;
 }
 
-function addItemBtn() {
-  const btn = document.createElement('button');
-  btn.innerHTML = 'Add an item';
-  btn.setAttribute('id', 'add-item-btn');
-  return btn;
-}
-
 document.body.appendChild(setContentParent());
-const parent = document.querySelector('#parent');
-parent.appendChild(addItemBtn());
-
-toAddItem();
-RenderToDoList();
+NavBar();
+HomePage();

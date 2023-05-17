@@ -13,6 +13,7 @@ function addDoneBtn(item, card) {
   const btn = document.createElement('button');
   btn.innerHTML = 'Complete';
   btn.setAttribute('id', 'task-complete');
+  btn.classList.add('btn-complete');
   const index = masterList.indexOf(item);
   btn.setAttribute('index', index);
   btn.addEventListener('click', (e) => {

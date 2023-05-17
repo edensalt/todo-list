@@ -4,7 +4,7 @@ import {
 } from './list_components';
 
 const RenderToDoList = function () {
-  const parent = document.querySelector('#parent');
+  const parent = document.querySelector('#main');
   // Check if list exists. If yes, remove items and re-render. If no, render.
   const container = document.createElement('div');
   container.setAttribute('id', 'list-container');
