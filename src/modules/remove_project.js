@@ -8,10 +8,10 @@ function removeProjectWarning(project) {
   const parent = document.querySelector('#parent');
   const popup = document.createElement('div');
   popup.setAttribute('id', 'warning-popup');
-  popup.classList.add('fixed', 't-2', 'l-2');
+  popup.classList.add('fixed', 'top-1/2', 'left-1/2', '-translate-x-1/2', '-translate-y-1/2', 'bg-red-200', 'p-4');
 
   const para = document.createElement('p');
-  para.innerHTML = 'Confirm project deletion. If you delete this project, all tasks associated with the project will be deleted. Please ensure you have reassigned these tasks. Okay to proceed?';
+  para.innerHTML = 'Confirm project deletion. If you delete this project, all tasks associated with the project will be deleted. Okay to proceed?';
 
   const cancelBtn = document.createElement('button');
   cancelBtn.innerHTML = 'Cancel';
@@ -23,8 +23,8 @@ function removeProjectWarning(project) {
 
   parent.appendChild(popup);
   popup.appendChild(para);
-  para.appendChild(cancelBtn);
-  para.appendChild(confirmBtn);
+  popup.appendChild(cancelBtn);
+  popup.appendChild(confirmBtn);
 
   cancelBtn.addEventListener('click', () => popup.remove());
 

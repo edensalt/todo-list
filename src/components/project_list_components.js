@@ -26,4 +26,19 @@ function addProject(project, card) {
   card.appendChild(para);
 }
 
-export { addProject, addDeleteBtn };
+function addFilterBtn(project, card) {
+  const btn = document.createElement('button');
+  btn.innerHTML = 'Filter';
+  btn.setAttribute('id', 'project-filter');
+  btn.classList.add('btn-complete');
+  const index = masterProjectList.indexOf(project);
+  btn.setAttribute('index', index);
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('filter to this project');
+    // filter
+  });
+  card.appendChild(btn);
+}
+
+export { addProject, addDeleteBtn, addFilterBtn };

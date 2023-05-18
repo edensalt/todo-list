@@ -1,5 +1,5 @@
 import { masterProjectList } from '../modules/create_project';
-import { addProject, addDeleteBtn } from './project_list_components';
+import { addProject, addDeleteBtn, addFilterBtn } from './project_list_components';
 
 const RenderProjectList = function () {
   const parent = document.querySelector('#projects-container');
@@ -9,7 +9,8 @@ const RenderProjectList = function () {
   masterProjectList.forEach((project) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'project-item');
-    card.classList.add('grid', 'grid-cols-2', 'gap-list', 'items-center', 'my-[5px]');
+    card.classList.add('grid', 'grid-cols-3', 'gap-list', 'items-center', 'my-[5px]');
+    addFilterBtn(project, card);
     addProject(project, card);
     addDeleteBtn(project, card);
     container.appendChild(card);
