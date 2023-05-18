@@ -5,13 +5,6 @@ const itemActions = {
     masterList.push(this);
     return masterList;
   },
-  removeFromList() {
-    const itemToRemove = masterList.findIndex(
-      (item) => item === this,
-    );
-    masterList.splice(itemToRemove, 1);
-    return masterList;
-  },
 };
 
 const createItem = (title, description, project, priority, dueDate) => {
