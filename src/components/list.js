@@ -12,7 +12,7 @@ const RenderToDoList = function () {
   masterList.forEach((item) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'list-item');
-    card.classList.add('grid', 'grid-cols-list', 'gap-list', 'items-center', 'my-[5px]');
+    card.classList.add('grid', 'grid-cols-list', 'gap-list', 'items-center', 'my-[5px]', 'text-sm');
     addTitle(item, card);
     addDescription(item, card);
     addProject(item, card);
@@ -22,7 +22,6 @@ const RenderToDoList = function () {
     container.appendChild(card);
   });
   parent.appendChild(container);
-  console.table(masterList);
 
   return container;
 };

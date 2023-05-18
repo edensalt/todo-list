@@ -1,6 +1,9 @@
-import { createFormField, createDataList, createSubmitBtn } from './form_components';
+import {
+  createFormField, createPriorityList, createSubmitBtn, createProjectList,
+} from './form_components';
 import { createItem } from '../modules/create_list_item';
-import RenderToDoList from './list';
+import { createProject, masterProjectList } from '../modules/create_project';
+import HomePage from '../pages/homepage';
 
 const ItemForm = function () {
   const container = document.querySelector('#form-container');
@@ -13,12 +16,23 @@ const ItemForm = function () {
 
   createFormField(form, 'text', 'title', 'title', 'task title here');
   createFormField(form, 'text', 'description', 'description', 'task description here');
-  createFormField(form, 'text', 'project', 'project', 'project here');
-  createDataList(form, 'priority-list', 'priority', 'priority', 'tel', 1, 2, 3);
+  createProjectList(form, 'project-list', 'project', 'project');
+  createPriorityList(form, 'priority-list', 'priority', 'priority', 'tel', 1, 2, 3);
   createFormField(form, 'date', 'due-date', 'due-date', '');
   createSubmitBtn(form, 'submit', 'submit-button', 'Add item');
 
   return form;
+};
+
+const CheckProject = function () {
+  const selectedProject = document.querySelector('#project').value;
+  const exists = masterProjectList.some((project) => project.project === selectedProject);
+  if (!exists) {
+    if (selectedProject === '') {
+      return;
+    }
+    createProject(selectedProject);
+  }
 };
 
 const AddItem = function () {
@@ -28,12 +42,15 @@ const AddItem = function () {
     const title = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
     const project = document.querySelector('#project').value;
+    CheckProject();
     const priority = document.querySelector('#priority').value;
     const dueDate = document.querySelector('#due-date').value;
     createItem(title, description, project, priority, dueDate);
     const form = document.querySelector('#item-form');
     form.reset();
-    RenderToDoList();
+    const main = document.querySelector('#main');
+    main.innerHTML = '';
+    HomePage();
   });
 };
 

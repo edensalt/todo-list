@@ -1,4 +1,5 @@
-import { createProject, masterProjectList } from '../modules/create_project';
+import { createProject } from '../modules/create_project';
+import HomePage from '../pages/homepage';
 import { createFormField, createSubmitBtn } from './form_components';
 
 const ProjectForm = function () {
@@ -24,8 +25,9 @@ const AddProject = function () {
     createProject(project);
     const form = document.querySelector('#project-form');
     form.reset();
-    console.table(masterProjectList);
-    // RenderToDoList();
+    const main = document.querySelector('#main');
+    main.innerHTML = '';
+    HomePage();
   });
 };
 

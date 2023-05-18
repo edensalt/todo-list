@@ -10,6 +10,7 @@ const HomePage = function () {
 
   const mainContent = document.createElement('div');
   mainContent.setAttribute('id', 'main-content');
+  mainContent.classList.add('basis-2/3');
 
   main.appendChild(leftSideBar);
   main.appendChild(mainContent);

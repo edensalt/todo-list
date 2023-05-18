@@ -1,3 +1,5 @@
+import { masterProjectList } from '../modules/create_project';
+
 const createFormField = function (container, type, id, name, placeholder) {
   const field = document.createElement('input');
   field.type = type;
@@ -9,7 +11,7 @@ const createFormField = function (container, type, id, name, placeholder) {
   container.appendChild(field);
 };
 
-const createDataList = function (
+const createPriorityList = function (
   container,
   list,
   name,
@@ -41,6 +43,30 @@ const createDataList = function (
   datalist.appendChild(option3);
 };
 
+const createProjectList = function (
+  container,
+  list,
+  name,
+  id,
+  type,
+) {
+  const field = document.createElement('input');
+  field.setAttribute('list', list);
+  field.name = name;
+  field.id = id;
+  field.type = type;
+  field.classList.add('item');
+  const datalist = document.createElement('datalist');
+  datalist.id = list;
+  container.appendChild(field);
+  field.appendChild(datalist);
+  masterProjectList.forEach((project) => {
+    const option = document.createElement('option');
+    option.value = project.project;
+    datalist.appendChild(option);
+  });
+};
+
 const createSubmitBtn = function (container, type, id, innerHTML) {
   const btn = document.createElement('button');
   btn.type = type;
@@ -50,4 +76,6 @@ const createSubmitBtn = function (container, type, id, innerHTML) {
   container.appendChild(btn);
 };
 
-export { createFormField, createDataList, createSubmitBtn };
+export {
+  createFormField, createPriorityList, createSubmitBtn, createProjectList,
+};
