@@ -13,7 +13,7 @@ const ProjectForm = function () {
 
   createFormField(form, 'text', 'project-cat', 'project-cat', 'new project');
   const projectInput = document.querySelector('#project-cat');
-  projectInput.classList.add('w-[100px]', 'flex-1');
+  projectInput.classList.add('w-[100px]', 'flex-1', 'rounded-md');
 
   createSubmitBtn(form, 'submit', 'proj-submit-button', 'Add');
   const projectSubmit = document.querySelector('#proj-submit-button');

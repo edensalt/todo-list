@@ -15,6 +15,7 @@ const createProject = (project) => {
 };
 
 createProject('Household');
+createProject('School');
 createProject('Odin Project');
 
 export { createProject, masterProjectList };

@@ -8,18 +8,19 @@ function removeProjectWarning(project) {
   const parent = document.querySelector('#parent');
   const popup = document.createElement('div');
   popup.setAttribute('id', 'warning-popup');
-  popup.classList.add('fixed', 'top-1/2', 'left-1/2', '-translate-x-1/2', '-translate-y-1/2', 'bg-red-200', 'p-4');
+  popup.classList.add('fixed', 'top-1/2', 'left-1/2', '-translate-x-1/2', '-translate-y-1/2', 'bg-red-200', 'w-1/3', 'p-8', 'rounded-lg', 'text-center');
 
   const para = document.createElement('p');
-  para.innerHTML = 'Confirm project deletion. If you delete this project, all tasks associated with the project will be deleted. Okay to proceed?';
+  para.innerHTML = 'CONFIRM ACTION TO DELETE PROJECT. <br /><br />If you delete this project, all tasks associated with the project will be deleted. Okay to proceed?';
+  para.classList.add('pb-7', 'font-semibold');
 
   const cancelBtn = document.createElement('button');
   cancelBtn.innerHTML = 'Cancel';
-  cancelBtn.classList.add('btn-complete');
+  cancelBtn.classList.add('btn-complete', 'mx-2', 'bg-neutral-600', 'hover:bg-neutral-500');
 
   const confirmBtn = document.createElement('button');
   confirmBtn.innerHTML = 'Delete project';
-  confirmBtn.classList.add('btn-complete');
+  confirmBtn.classList.add('btn-complete', 'mx-2', 'bg-red-600', 'hover:bg-red-500');
 
   parent.appendChild(popup);
   popup.appendChild(para);

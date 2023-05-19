@@ -7,7 +7,7 @@ const NavBar = function () {
 
   const title = document.createElement('h1');
   title.setAttribute('id', 'title');
-  title.classList.add('text-5xl', 'flex', 'justify-center', 'pt-10', 'pb-2', 'font-handwriting');
+  title.classList.add('text-5xl', 'flex', 'justify-center', 'pt-10', 'pb-2', 'font-handwriting', 'w-full');
   title.innerHTML = 'To-Do List';
 
   const subtitle = document.createElement('h2');

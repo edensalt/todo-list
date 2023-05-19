@@ -6,11 +6,11 @@ const RenderProjectList = function () {
   parent.innerHTML = '';
   const container = document.createElement('div');
   container.setAttribute('id', 'projects-list');
-  container.classList.add('py-2', 'px-8', 'bg-emerald-50');
+  container.classList.add('py-2', 'bg-emerald-50');
   masterProjectList.forEach((project) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'project-item');
-    card.classList.add('flex', 'gap-2', 'items-center', 'my-2', 'text-sm');
+    card.classList.add('flex', 'gap-2', 'items-center', 'my-2', 'text-sm', 'px-8');
     addFilterBtn(project, card);
     addProject(project, card);
     addDeleteBtn(project, card);
