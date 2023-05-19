@@ -10,7 +10,7 @@ const RenderProjectList = function () {
   masterProjectList.forEach((project) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'project-item');
-    card.classList.add('flex', 'gap-2', 'items-center', 'my-2');
+    card.classList.add('flex', 'gap-2', 'items-center', 'my-2', 'text-sm');
     addFilterBtn(project, card);
     addProject(project, card);
     addDeleteBtn(project, card);

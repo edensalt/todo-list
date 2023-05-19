@@ -9,10 +9,11 @@ const RenderToDoList = function () {
   // Check if list exists. If yes, remove items and re-render. If no, render.
   const container = document.createElement('div');
   container.setAttribute('id', 'items-list');
+  container.classList.add('py-2', 'px-8', 'bg-sky-100');
   masterList.forEach((item) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'list-item');
-    card.classList.add('grid', 'grid-cols-list', 'gap-list', 'items-center', 'my-[5px]', 'text-sm');
+    card.classList.add('grid', 'grid-cols-list', 'gap-2', 'items-center', 'my-2', 'text-sm');
     addTitle(item, card);
     addDescription(item, card);
     addProject(item, card);

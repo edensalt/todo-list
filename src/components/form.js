@@ -10,7 +10,7 @@ const ItemForm = function () {
 
   const form = document.createElement('form');
   form.setAttribute('id', 'item-form');
-  form.classList.add('grid', 'grid-cols-list', 'gap-list', 'bg-green-200', 'p-2');
+  form.classList.add('grid', 'grid-cols-list', 'gap-2');
 
   container.appendChild(form);
 
@@ -58,7 +58,7 @@ const AddItemForm = function () {
   const parent = document.querySelector('#items');
   const container = document.createElement('div');
   container.setAttribute('id', 'form-container');
-  container.classList.add('mb-10');
+  container.classList.add('mb-10', 'px-8', 'py-2', 'bg-sky-200');
   parent.appendChild(container);
 
   ItemForm();

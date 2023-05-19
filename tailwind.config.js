@@ -7,11 +7,8 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        list: '120px 180px 120px 30px 90px 90px',
+        list: 'minmax(120px, 1fr) minmax(180px, 2fr) 120px 45px 90px 90px',
         main: '1fr 3fr',
-      },
-      gap: {
-        list: '5px',
       },
     },
   },

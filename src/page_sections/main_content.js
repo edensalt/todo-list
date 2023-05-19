@@ -6,11 +6,10 @@ const MainContent = function () {
 
   const items = document.createElement('div');
   items.setAttribute('id', 'items');
-  items.classList.add('bg-yellow-100', 'border-2');
 
   const itemsHeader = document.createElement('h2');
   itemsHeader.setAttribute('id', 'items-header');
-  itemsHeader.classList.add('text-2xl', 'font-bold', 'flex', 'justify-center', 'py-10');
+  itemsHeader.classList.add('text-3xl', 'flex', 'justify-center', 'py-5', 'font-handwriting');
   itemsHeader.innerHTML = 'Items';
 
   const itemsContainer = document.createElement('div');

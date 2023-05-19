@@ -5,7 +5,7 @@ import NavBar from './page_sections/navbar';
 function setContentParent() {
   const div = document.createElement('div');
   div.setAttribute('id', 'parent');
-  div.classList.add('w-screen');
+  div.classList.add('w-screen', 'min-h-screen');
   return div;
 }
 

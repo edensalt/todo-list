@@ -3,10 +3,11 @@ const NavBar = function () {
 
   const navBar = document.createElement('div');
   navBar.setAttribute('id', 'navbar');
+  navBar.classList.add('bg-blue-50');
 
   const title = document.createElement('h1');
   title.setAttribute('id', 'title');
-  title.classList.add('text-5xl', 'flex', 'justify-center', 'pt-10', 'pb-5', 'font-handwriting');
+  title.classList.add('text-5xl', 'flex', 'justify-center', 'pt-10', 'pb-2', 'font-handwriting');
   title.innerHTML = 'To-Do List';
 
   const subtitle = document.createElement('h2');
@@ -16,7 +17,7 @@ const NavBar = function () {
 
   const pageContent = document.createElement('div');
   pageContent.setAttribute('id', 'main');
-  pageContent.classList.add('flex');
+  pageContent.classList.add('flex', 'h-full');
 
   parent.appendChild(navBar);
   navBar.appendChild(title);
