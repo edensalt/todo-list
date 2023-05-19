@@ -4,9 +4,9 @@ import HomePage from '../pages/homepage';
 
 function addDeleteBtn(project, card) {
   const btn = document.createElement('button');
-  btn.innerHTML = 'Delete';
+  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z"/></svg>';
   btn.setAttribute('id', 'delete-project');
-  btn.classList.add('btn-complete');
+  btn.classList.add('bg-transparent');
   const index = masterProjectList.indexOf(project);
   btn.setAttribute('index', index);
   btn.addEventListener('click', (e) => {
@@ -22,7 +22,7 @@ function addDeleteBtn(project, card) {
 function addProject(project, card) {
   const para = document.createElement('p');
   para.innerHTML = project.project;
-  para.classList.add('item');
+  para.classList.add('item', 'flex-1');
   card.appendChild(para);
 }
 
@@ -30,7 +30,7 @@ function addFilterBtn(project, card) {
   const btn = document.createElement('button');
   btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600V276H180v600Z"/></svg>';
   btn.setAttribute('id', 'project-filter-off');
-  btn.classList.add('bg-transparent');
+  btn.classList.add('bg-transparent', 'flex-0');
   const index = masterProjectList.indexOf(project);
   btn.setAttribute('index', index);
   btn.addEventListener('click', (e) => {
