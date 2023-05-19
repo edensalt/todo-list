@@ -6,11 +6,11 @@ const HomePage = function () {
 
   const leftSideBar = document.createElement('div');
   leftSideBar.setAttribute('id', 'left-sidebar');
-  leftSideBar.classList.add('basis-1/3');
+  leftSideBar.classList.add('flex-initial', 'w-[300px]', 'bg-gray-100');
 
   const mainContent = document.createElement('div');
   mainContent.setAttribute('id', 'main-content');
-  mainContent.classList.add('basis-2/3');
+  mainContent.classList.add('flex-1');
 
   main.appendChild(leftSideBar);
   main.appendChild(mainContent);

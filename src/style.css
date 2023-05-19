@@ -2,11 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "handwriting";
+    src: url("./fonts/CoveredByYourGrace-Regular.ttf") format("truetype");
+    font-style: normal;
+}
+
 @layer components {
     .btn-complete {
-        @apply inline-flex items-center gap-x-1.5 rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+        @apply inline-flex items-center gap-x-1.5 rounded-md bg-emerald-700 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
     }
     .item {
-        @apply bg-slate-50 py-1 px-3
+        @apply bg-slate-50 py-1 px-3 rounded-lg text-sm
     }
 }

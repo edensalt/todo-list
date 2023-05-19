@@ -3,16 +3,21 @@ import HomePage from '../pages/homepage';
 import { createFormField, createSubmitBtn } from './form_components';
 
 const ProjectForm = function () {
-  const container = document.querySelector('#projects');
+  const container = document.querySelector('#proj-form-container');
 
   const form = document.createElement('form');
   form.setAttribute('id', 'project-form');
-  form.classList.add('grid', 'grid-cols-2', 'gap-list');
+  form.classList.add('flex', 'flex-wrap', 'gap-2', 'bg-lime-200', 'py-2', 'px-8', 'hover:bg-lime-300');
 
   container.appendChild(form);
 
   createFormField(form, 'text', 'project-cat', 'project-cat', 'new project');
-  createSubmitBtn(form, 'submit', 'proj-submit-button', 'Add project');
+  const projectInput = document.querySelector('#project-cat');
+  projectInput.classList.add('w-[100px]', 'flex-1');
+
+  createSubmitBtn(form, 'submit', 'proj-submit-button', 'Add');
+  const projectSubmit = document.querySelector('#proj-submit-button');
+  projectSubmit.classList.add('flex-0');
 
   return form;
 };

@@ -10,7 +10,7 @@ const ItemForm = function () {
 
   const form = document.createElement('form');
   form.setAttribute('id', 'item-form');
-  form.classList.add('grid', 'grid-cols-list', 'gap-list');
+  form.classList.add('grid', 'grid-cols-list', 'gap-list', 'bg-green-200', 'p-2');
 
   container.appendChild(form);
 

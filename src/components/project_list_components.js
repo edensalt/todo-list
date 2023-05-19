@@ -28,14 +28,16 @@ function addProject(project, card) {
 
 function addFilterBtn(project, card) {
   const btn = document.createElement('button');
-  btn.innerHTML = 'Filter';
-  btn.setAttribute('id', 'project-filter');
-  btn.classList.add('btn-complete');
+  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600V276H180v600Z"/></svg>';
+  btn.setAttribute('id', 'project-filter-off');
+  btn.classList.add('bg-transparent');
   const index = masterProjectList.indexOf(project);
   btn.setAttribute('index', index);
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('filter to this project');
+    // Change svg based on id
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M180 936q-24.75 0-42.375-17.625T120 876V276q0-24.75 17.625-42.375T180 216h600q14 0 25.5 6t18.5 14l-44 44v-4H180v600h600V533l60-60v403q0 24.75-17.625 42.375T780 936H180Zm281-168L239 546l42-42 180 180 382-382 42 42-424 424Z"/></svg>';
     // filter
   });
   card.appendChild(btn);
