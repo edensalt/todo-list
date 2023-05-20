@@ -6,12 +6,12 @@ const NavBar = function () {
   navBar.classList.add('bg-blue-50');
 
   const title = document.createElement('h1');
-  title.setAttribute('id', 'title');
+  title.setAttribute('id', 'header');
   title.classList.add('text-5xl', 'flex', 'justify-center', 'pt-10', 'pb-2', 'font-handwriting', 'w-full');
   title.innerHTML = 'To-Do List';
 
   const subtitle = document.createElement('h2');
-  subtitle.setAttribute('id', 'subtitle');
+  subtitle.setAttribute('id', 'subheader');
   subtitle.classList.add('text-2xl', 'flex', 'justify-center', 'pb-10', 'font-handwriting');
   subtitle.innerHTML = 'You can do this, with to-do list!';
 

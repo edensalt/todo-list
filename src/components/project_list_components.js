@@ -28,11 +28,11 @@ function addProject(project, card) {
 
 function addFilterBtn(project, card) {
   const btn = document.createElement('button');
-  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600V276H180v600Z"/></svg>';
   btn.setAttribute('id', 'project-filter-off');
   btn.classList.add('bg-transparent', 'flex-0');
   const index = masterProjectList.indexOf(project);
   btn.setAttribute('index', index);
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" index="${index}" height="18" viewBox="0 96 960 960" width="18"><path d="M180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600V276H180v600Z"/></svg>`;
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('filter to this project');

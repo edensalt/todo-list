@@ -1,18 +1,54 @@
 import removeItem from '../modules/remove_list_item';
 import { masterList } from '../modules/create_list_item';
 import RenderToDoList from './list';
+import completeItem from '../modules/complete_list_item';
 
+function addCompleteBtn(item, card) {
+  const btn = document.createElement('button');
+  btn.setAttribute('id', 'task-complete');
+  btn.classList.add('fill-black', 'hover:fill-emerald-600');
+  const index = masterList.indexOf(item);
+  btn.setAttribute('index', index);
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" index="${index}" height="18" viewBox="0 96 960 960" width="18"><path d="M180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600V276H180v600Z"/></svg>`;
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('strike through task, turn light gray');
+    completeItem(e);
+
+    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" index="${index}" height="18" viewBox="0 96 960 960" width="18"><path d="M180 936q-24.75 0-42.375-17.625T120 876V276q0-24.75 17.625-42.375T180 216h600q14 0 25.5 6t18.5 14l-44 44v-4H180v600h600V533l60-60v403q0 24.75-17.625 42.375T780 936H180Zm281-168L239 546l42-42 180 180 382-382 42 42-424 424Z"/></svg>`;
+
+    // Currently logic for deleting. Instead, update to logic for marking as complete.
+  });
+  card.appendChild(btn);
+}
+
+// Delete button
 function addDoneBtn(item, card) {
   const btn = document.createElement('button');
-  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="fill-white" height="18" viewBox="0 96 960 960" width="18"><path d="M378 834 130 586l68-68 180 180 383-383 68 68-451 451Z"/></svg>Complete';
   btn.setAttribute('id', 'task-complete');
-  btn.classList.add('border-box', 'flex', 'justify-center', 'gap-1', 'p-2', 'text-white', 'text-sm', 'font-semibold', 'rounded-md', 'bg-emerald-700', 'shadow-sm', 'hover:bg-emerald-600', 'focus-visible:outline', 'focus-visible:outline-2', 'focus-visible:outline-offset-2', 'focus-visible:outline-indigo-600');
+  btn.classList.add('fill-black', 'hover:fill-emerald-600');
   const index = masterList.indexOf(item);
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" index="${index}" height="18" viewBox="0 96 960 960" width="18"><path d="M180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600V276H180v600Z"/></svg>`;
   btn.setAttribute('index', index);
   btn.addEventListener('click', (e) => {
     e.preventDefault();
+    // Currently logic for deleting. Instead, update to logic for marking as complete.
     removeItem(e);
     RenderToDoList();
+  });
+  card.appendChild(btn);
+}
+
+function addEditBtn(item, card) {
+  const btn = document.createElement('button');
+  btn.setAttribute('id', 'edit-task');
+  btn.classList.add('fill-black', 'hover:fill-emerald-600', 'flex', 'justify-center');
+  const index = masterList.indexOf(item);
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" index="${index}" height="18" viewBox="0 96 960 960" width="18"><path d="M187 877h32l435-437-32-32-435 437v32Zm610-479L665 266l21-22q28-28 66.5-28.5T819 242l18 18q23 22 20.5 51T835 360l-38 38Zm-41 41L247 948H115V816l508-508 133 131Zm-117-15-17-16 32 32-15-16Z"/></svg>`;
+  btn.setAttribute('index', index);
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    // Edit task
   });
   card.appendChild(btn);
 }
@@ -54,5 +90,5 @@ function addDueDate(item, card) {
 }
 
 export {
-  addDoneBtn, addTitle, addDescription, addProject, addPriority, addDueDate,
+  addCompleteBtn, addDoneBtn, addEditBtn, addTitle, addDescription, addProject, addPriority, addDueDate,
 };

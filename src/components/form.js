@@ -1,7 +1,7 @@
 import {
   createFormField, createPriorityList, createSubmitBtn, createProjectList,
 } from './form_components';
-import { createItem } from '../modules/create_list_item';
+import { createItem, masterList } from '../modules/create_list_item';
 import { createProject, masterProjectList } from '../modules/create_project';
 import HomePage from '../pages/homepage';
 
@@ -13,6 +13,9 @@ const ItemForm = function () {
   form.classList.add('grid', 'grid-cols-list', 'gap-2');
 
   container.appendChild(form);
+
+  const col1 = document.createElement('div');
+  form.appendChild(col1);
 
   createFormField(form, 'text', 'title', 'title', 'task title here');
   createFormField(form, 'text', 'description', 'description', 'task description here');
@@ -45,7 +48,7 @@ const AddItem = function () {
     CheckProject();
     const priority = document.querySelector('#priority').value;
     const dueDate = document.querySelector('#due-date').value;
-    createItem(title, description, project, priority, dueDate);
+    createItem(title, description, project, priority, dueDate, 'incomplete');
     const form = document.querySelector('#item-form');
     form.reset();
     const main = document.querySelector('#main');
@@ -63,6 +66,8 @@ const AddItemForm = function () {
 
   ItemForm();
   AddItem();
+
+  console.table(masterList);
 
   return container;
 };

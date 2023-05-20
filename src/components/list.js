@@ -1,6 +1,6 @@
 import { masterList } from '../modules/create_list_item';
 import {
-  addDoneBtn, addTitle, addDescription, addDueDate, addPriority, addProject,
+  addDoneBtn, addTitle, addDescription, addDueDate, addPriority, addProject, addEditBtn, addCompleteBtn,
 } from './list_components';
 
 const RenderToDoList = function () {
@@ -14,12 +14,13 @@ const RenderToDoList = function () {
     const card = document.createElement('div');
     card.setAttribute('id', 'list-item');
     card.classList.add('grid', 'grid-cols-list', 'gap-2', 'items-center', 'my-2', 'text-sm', 'bg-slate-50', 'px-8');
+    addCompleteBtn(item, card);
     addTitle(item, card);
     addDescription(item, card);
     addProject(item, card);
     addPriority(item, card);
     addDueDate(item, card);
-    addDoneBtn(item, card);
+    addEditBtn(item, card);
     container.appendChild(card);
   });
   parent.appendChild(container);
