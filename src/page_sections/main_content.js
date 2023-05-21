@@ -1,5 +1,6 @@
 import AddItemForm from '../components/form';
 import RenderToDoList from '../components/list';
+import RenderListFilters from '../components/list_filters';
 
 const MainContent = function () {
   const parent = document.querySelector('#main-content');
@@ -18,6 +19,7 @@ const MainContent = function () {
   parent.appendChild(items);
   items.appendChild(itemsHeader);
   items.appendChild(AddItemForm());
+  items.appendChild(RenderListFilters());
   items.appendChild(itemsContainer);
   itemsContainer.appendChild(RenderToDoList());
 

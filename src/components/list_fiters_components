@@ -1,0 +1,15 @@
+function addFilter(name, filter) {
+  const btn = document.createElement('button');
+  btn.setAttribute('id', `${filter}-filter`);
+  btn.classList.add('flex', 'align-center', 'py-1', 'px-3', 'gap-2');
+  btn.setAttribute('status', 'unfiltered');
+  btn.classList.add('fill-black', 'hover:fill-emerald-600');
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="m70 782 166-412h75l166 412h-81l-38-99H183l-38 99H70Zm137-163h128l-62-160h-4l-62 160Zm337 163v-70l224-278H562v-64h284v71L626 718h222v64H544ZM371 278l109-110 110 110H371Zm109 706L371 874h219L480 984Z"/></svg>${name}`;
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('sort a to z');
+  });
+  return btn;
+}
+export default addFilter;

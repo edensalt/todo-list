@@ -23,7 +23,7 @@ const RenderToDoList = function () {
     addEditBtn(item, card);
     addDoneBtn(item, card);
     if (item.status === 'complete') {
-      card.classList.add('bg-blue-200');
+      card.classList.add('text-gray-400', 'fill-gray-400', 'bg-gray-200');
     }
     container.appendChild(card);
   });
