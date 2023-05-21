@@ -1,4 +1,5 @@
 import { addCompleteFilter, addAlphaFilter, addNumFilter } from './list_fiters_components';
+import { titleSortAZ } from '../modules/list_filter_methods';
 
 const RenderListFilters = function () {
   const parent = document.querySelector('#items');
