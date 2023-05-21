@@ -1,3 +1,4 @@
+import RenderToDoList from '../components/list';
 import { masterList } from './create_list_item';
 
 const titleSortAZ = function (filter) {
@@ -25,6 +26,16 @@ const numSort91 = function (filter) {
   return masterList;
 };
 
+const incompleteSort = function (filter) {
+  const masterListIncomplete = masterList.filter((item) => item[filter] === 'incomplete');
+  RenderToDoList(masterListIncomplete);
+};
+
+const completeSort = function (filter) {
+  const masterListComplete = masterList.filter((item) => item[filter] === 'complete');
+  RenderToDoList(masterListComplete);
+};
+
 export {
-  titleSortAZ, titleSortZA, numSort19, numSort91,
+  titleSortAZ, titleSortZA, numSort19, numSort91, incompleteSort, completeSort,
 };

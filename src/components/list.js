@@ -3,16 +3,19 @@ import {
   addDeleteBtn, addTitle, addDescription, addDueDate, addPriority, addProject, addEditBtn, addCompleteBtn,
 } from './list_components';
 
-const RenderToDoList = function () {
+const RenderToDoList = function (list) {
+  if (list === null || list === undefined) {
+    list = masterList;
+  }
   const parent = document.querySelector('#items-container');
   parent.innerHTML = '';
   const container = document.createElement('div');
   container.setAttribute('id', 'items-list');
   container.classList.add('py-2', 'bg-sky-100');
-  masterList.forEach((item) => {
+  list.forEach((item) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'list-item');
-    const index = masterList.indexOf(item);
+    const index = list.indexOf(item);
     card.setAttribute('index', index);
     card.classList.add('grid', 'grid-cols-list', 'gap-2', 'items-center', 'my-2', 'text-sm', 'bg-slate-50', 'px-8');
     addCompleteBtn(item, card);

@@ -1,6 +1,6 @@
 import { masterList } from '../modules/create_list_item';
 import {
-  numSort19, numSort91, titleSortAZ, titleSortZA,
+  numSort19, numSort91, titleSortAZ, titleSortZA, incompleteSort, completeSort,
 } from '../modules/list_filter_methods';
 import RenderToDoList from './list';
 
@@ -62,7 +62,17 @@ function addCompleteFilter(filter) {
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('sort by completed');
+    const filterStatus = btn.getAttribute('filter');
+    if (filterStatus === undefined || filterStatus === null || filterStatus === 'all') {
+      incompleteSort(filter);
+      btn.setAttribute('filter', 'incomplete');
+    } else if (filterStatus === 'incomplete') {
+      completeSort(filter);
+      btn.setAttribute('filter', 'complete');
+    } else {
+      RenderToDoList(masterList);
+      btn.setAttribute('filter', 'all');
+    }
   });
   div.appendChild(btn);
   return div;
