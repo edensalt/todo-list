@@ -26,11 +26,12 @@ function addCompleteBtn(item, card) {
 }
 
 // Delete button
-function addDoneBtn(item, card) {
+function addDeleteBtn(item, card) {
   const btn = document.createElement('button');
   btn.setAttribute('id', 'task-complete');
-  btn.classList.add('fill-black');
   const index = masterList.indexOf(item);
+  btn.setAttribute('index', index);
+  btn.classList.add('fill-black');
   btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" index=${index} class="hover:fill-red-600" height="18" viewBox="0 96 960 960" width="18"><path d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z"/></svg>`;
   btn.setAttribute('index', index);
   btn.addEventListener('click', (e) => {
@@ -93,5 +94,5 @@ function addDueDate(item, card) {
 }
 
 export {
-  addCompleteBtn, addDoneBtn, addEditBtn, addTitle, addDescription, addProject, addPriority, addDueDate,
+  addCompleteBtn, addDeleteBtn, addEditBtn, addTitle, addDescription, addProject, addPriority, addDueDate,
 };

@@ -1,18 +1,19 @@
 import { masterList } from '../modules/create_list_item';
 import {
-  addDoneBtn, addTitle, addDescription, addDueDate, addPriority, addProject, addEditBtn, addCompleteBtn,
+  addDeleteBtn, addTitle, addDescription, addDueDate, addPriority, addProject, addEditBtn, addCompleteBtn,
 } from './list_components';
 
 const RenderToDoList = function () {
   const parent = document.querySelector('#items-container');
   parent.innerHTML = '';
-  // Check if list exists. If yes, remove items and re-render. If no, render.
   const container = document.createElement('div');
   container.setAttribute('id', 'items-list');
   container.classList.add('py-2', 'bg-sky-100');
   masterList.forEach((item) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'list-item');
+    const index = masterList.indexOf(item);
+    card.setAttribute('index', index);
     card.classList.add('grid', 'grid-cols-list', 'gap-2', 'items-center', 'my-2', 'text-sm', 'bg-slate-50', 'px-8');
     addCompleteBtn(item, card);
     addTitle(item, card);
@@ -21,7 +22,7 @@ const RenderToDoList = function () {
     addPriority(item, card);
     addDueDate(item, card);
     addEditBtn(item, card);
-    addDoneBtn(item, card);
+    addDeleteBtn(item, card);
     if (item.status === 'complete') {
       card.classList.add('text-gray-400', 'fill-gray-400', 'bg-gray-200');
     }
