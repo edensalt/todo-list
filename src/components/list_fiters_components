@@ -1,15 +1,52 @@
-function addFilter(name, filter) {
+function addAlphaFilter(name, filter) {
+  const div = document.createElement('div');
+  div.classList.add('item');
   const btn = document.createElement('button');
   btn.setAttribute('id', `${filter}-filter`);
-  btn.classList.add('flex', 'align-center', 'py-1', 'px-3', 'gap-2');
+  btn.classList.add('flex', 'align-center', 'gap-2', 'fill-black');
   btn.setAttribute('status', 'unfiltered');
-  btn.classList.add('fill-black', 'hover:fill-emerald-600');
   btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="m70 782 166-412h75l166 412h-81l-38-99H183l-38 99H70Zm137-163h128l-62-160h-4l-62 160Zm337 163v-70l224-278H562v-64h284v71L626 718h222v64H544ZM371 278l109-110 110 110H371Zm109 706L371 874h219L480 984Z"/></svg>${name}`;
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('sort a to z');
   });
-  return btn;
+  div.appendChild(btn);
+  return div;
 }
-export default addFilter;
+
+function addNumFilter(filter) {
+  const div = document.createElement('div');
+  div.classList.add('item');
+  const btn = document.createElement('button');
+  btn.setAttribute('id', `${filter}-filter`);
+  btn.classList.add('flex', 'align-center', 'gap-2');
+  btn.setAttribute('status', 'unfiltered');
+  btn.classList.add('fill-black', 'hover:fill-emerald-600');
+  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M691 1001v-75h100v-22h-60v-60h60v-23H691v-75h127q20.4 0 34.2 13.8Q866 773.6 866 794v32q0 20.4-13.8 34.2Q838.4 874 818 874q20.4 0 34.2 13.875Q866 901.75 866 921v33q0 19.975-13.8 33.487Q838.4 1001 818 1001H691Zm0-298V593q0-19.25 13.513-33.125Q718.025 546 738 546h53v-23H691v-75h127q20.4 0 34.2 13.8Q866 475.6 866 496v62q0 20.4-13.8 34.2Q838.4 606 818 606h-52v22h100v75H691Zm60-298V218h-60v-68h135v255h-75ZM113 864v-94h489v94H113Zm0-243v-94h489v94H113Zm0-243v-94h489v94H113Z"/></svg>';
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('sort 1 to 3');
+  });
+  div.appendChild(btn);
+  return div;
+}
+
+function addCompleteFilter(filter) {
+  const div = document.createElement('div');
+  const btn = document.createElement('button');
+  btn.setAttribute('id', `${filter}-filter`);
+  btn.classList.add('flex', 'align-center', 'gap-2', 'fill-black');
+  btn.setAttribute('status', 'unfiltered');
+  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600V276H180v600Z"/></svg>';
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('sort by completed');
+  });
+  div.appendChild(btn);
+  return div;
+}
+
+export { addAlphaFilter, addNumFilter, addCompleteFilter };
