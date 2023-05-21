@@ -21,6 +21,10 @@ const RenderToDoList = function () {
     addPriority(item, card);
     addDueDate(item, card);
     addEditBtn(item, card);
+    addDoneBtn(item, card);
+    if (item.status === 'complete') {
+      card.classList.add('bg-blue-200');
+    }
     container.appendChild(card);
   });
   parent.appendChild(container);
