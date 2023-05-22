@@ -3,12 +3,26 @@ import {
   addDeleteBtn, addTitle, addDescription, addDueDate, addPriority, addProject, addEditBtn, addCompleteBtn,
 } from './list_components';
 
-const RenderToDoList = function (list) {
-  if (list === null || list === undefined) {
-    list = masterList;
-  }
+// Define master lists based on filters, e.g.
+// masterListComplete = function of completed items, etc (import from filters)
+
+function determineFilter() {
+  const main = document.querySelector('#main');
+  const filterStatus = main.getAttribute('filter');
+  if (filterStatus === 'incomplete') {
+    const masterListIncomplete = masterList.filter((item) => item.status === 'incomplete');
+    return masterListIncomplete;
+  } if (filterStatus === 'complete') {
+    const masterListComplete = masterList.filter((item) => item.status === 'complete');
+    return masterListComplete;
+  } return masterList;
+}
+
+const RenderToDoList = function () {
+  const list = determineFilter();
   const parent = document.querySelector('#items-container');
   parent.innerHTML = '';
+  // parent.setAttribute('filter', 'all');
   const container = document.createElement('div');
   container.setAttribute('id', 'items-list');
   container.classList.add('py-2', 'bg-sky-100');

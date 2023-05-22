@@ -1,6 +1,6 @@
 import { masterList } from '../modules/create_list_item';
 import {
-  numSort19, numSort91, titleSortAZ, titleSortZA, incompleteSort, completeSort,
+  numSort19, numSort91, titleSortAZ, titleSortZA,
 } from '../modules/list_filter_methods';
 import RenderToDoList from './list';
 
@@ -62,16 +62,17 @@ function addCompleteFilter(filter) {
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    const filterStatus = btn.getAttribute('filter');
+    const main = document.querySelector('#main');
+    const filterStatus = main.getAttribute('filter');
     if (filterStatus === undefined || filterStatus === null || filterStatus === 'all') {
-      incompleteSort(filter);
-      btn.setAttribute('filter', 'incomplete');
+      main.setAttribute('filter', 'incomplete');
+      RenderToDoList();
     } else if (filterStatus === 'incomplete') {
-      completeSort(filter);
-      btn.setAttribute('filter', 'complete');
+      main.setAttribute('filter', 'complete');
+      RenderToDoList();
     } else {
-      RenderToDoList(masterList);
-      btn.setAttribute('filter', 'all');
+      main.setAttribute('filter', 'all');
+      RenderToDoList();
     }
   });
   div.appendChild(btn);

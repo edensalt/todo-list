@@ -18,6 +18,7 @@ const NavBar = function () {
   const pageContent = document.createElement('div');
   pageContent.setAttribute('id', 'main');
   pageContent.classList.add('flex', 'h-full');
+  pageContent.setAttribute('item-filter', 'all');
 
   parent.appendChild(navBar);
   navBar.appendChild(title);
