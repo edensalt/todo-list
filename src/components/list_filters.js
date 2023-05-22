@@ -1,5 +1,4 @@
 import { addCompleteFilter, addAlphaFilter, addNumFilter } from './list_fiters_components';
-import { titleSortAZ } from '../modules/list_filter_methods';
 
 const RenderListFilters = function () {
   const parent = document.querySelector('#items');
@@ -11,8 +10,8 @@ const RenderListFilters = function () {
   container.appendChild(addAlphaFilter('Title', 'title'));
   container.appendChild(addAlphaFilter('Description', 'description'));
   container.appendChild(addAlphaFilter('Project', 'project'));
-  container.appendChild(addNumFilter('priority'));
-  container.appendChild(addNumFilter('date'));
+  container.appendChild(addNumFilter('priority', ''));
+  container.appendChild(addNumFilter('dueDate', 'Date'));
 
   parent.appendChild(container);
 

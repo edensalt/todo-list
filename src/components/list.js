@@ -22,7 +22,6 @@ const RenderToDoList = function () {
   const list = determineFilter();
   const parent = document.querySelector('#items-container');
   parent.innerHTML = '';
-  // parent.setAttribute('filter', 'all');
   const container = document.createElement('div');
   container.setAttribute('id', 'items-list');
   container.classList.add('py-2', 'bg-sky-100');

@@ -66,9 +66,6 @@ const AddItemForm = function () {
 
   ItemForm();
   AddItem();
-
-  console.table(masterList);
-
   return container;
 };
 

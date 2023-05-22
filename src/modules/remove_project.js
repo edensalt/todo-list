@@ -47,7 +47,6 @@ function removeProjectWarning(project) {
 
 const removeProject = function (e) {
   const project = e.target.parentNode.getAttribute('index');
-  console.log(project);
   removeProjectWarning(project);
 };
 

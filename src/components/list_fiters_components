@@ -1,4 +1,3 @@
-import { masterList } from '../modules/create_list_item';
 import {
   numSort19, numSort91, titleSortAZ, titleSortZA,
 } from '../modules/list_filter_methods';
@@ -10,7 +9,7 @@ function addAlphaFilter(name, filter) {
   const btn = document.createElement('button');
   btn.setAttribute('id', `${filter}-filter`);
   btn.classList.add('flex', 'align-center', 'gap-2', 'fill-black');
-  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="m70 782 166-412h75l166 412h-81l-38-99H183l-38 99H70Zm137-163h128l-62-160h-4l-62 160Zm337 163v-70l224-278H562v-64h284v71L626 718h222v64H544ZM371 278l109-110 110 110H371Zm109 706L371 874h219L480 984Z"/></svg>${name}`;
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M305 601V309L202 412l-66-66 217-217 217 217-66 66-105-104v293h-94Zm302 420L390 803l66-65 103 102V548h94v293l105-103 66 66-217 217Z"/></svg>${name}`;
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -28,13 +27,13 @@ function addAlphaFilter(name, filter) {
   return div;
 }
 
-function addNumFilter(filter) {
+function addNumFilter(filter, name) {
   const div = document.createElement('div');
   div.classList.add('item');
   const btn = document.createElement('button');
   btn.setAttribute('id', `${filter}-filter`);
-  btn.classList.add('flex', 'align-center', 'gap-2', 'fill-black', 'hover:fill-emerald-600');
-  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M691 1001v-75h100v-22h-60v-60h60v-23H691v-75h127q20.4 0 34.2 13.8Q866 773.6 866 794v32q0 20.4-13.8 34.2Q838.4 874 818 874q20.4 0 34.2 13.875Q866 901.75 866 921v33q0 19.975-13.8 33.487Q838.4 1001 818 1001H691Zm0-298V593q0-19.25 13.513-33.125Q718.025 546 738 546h53v-23H691v-75h127q20.4 0 34.2 13.8Q866 475.6 866 496v62q0 20.4-13.8 34.2Q838.4 606 818 606h-52v22h100v75H691Zm60-298V218h-60v-68h135v255h-75ZM113 864v-94h489v94H113Zm0-243v-94h489v94H113Zm0-243v-94h489v94H113Z"/></svg>';
+  btn.classList.add('flex', 'align-center', 'gap-2', 'fill-black');
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M305 601V309L202 412l-66-66 217-217 217 217-66 66-105-104v293h-94Zm302 420L390 803l66-65 103 102V548h94v293l105-103 66 66-217 217Z"/></svg>${name}`;
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
