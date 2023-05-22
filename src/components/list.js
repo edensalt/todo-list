@@ -9,13 +9,11 @@ import {
 function determineFilter() {
   const main = document.querySelector('#main');
   const filterStatus = main.getAttribute('filter');
-  if (filterStatus === 'incomplete') {
-    const masterListIncomplete = masterList.filter((item) => item.status === 'incomplete');
-    return masterListIncomplete;
-  } if (filterStatus === 'complete') {
-    const masterListComplete = masterList.filter((item) => item.status === 'complete');
-    return masterListComplete;
-  } return masterList;
+  if (filterStatus === undefined || filterStatus === null || filterStatus === 'all') {
+    return masterList;
+  }
+  const filteredMasterList = masterList.filter((item) => item.status === filterStatus);
+  return filteredMasterList;
 }
 
 const RenderToDoList = function () {
