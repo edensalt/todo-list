@@ -29,7 +29,7 @@ function addProject(project, card) {
 
 function addFilterBtn(project, card) {
   const btn = document.createElement('button');
-  btn.classList.add('bg-transparent', 'flex-0');
+  btn.classList.add('bg-transparent', 'flex-0', 'hover:fill-emerald-600');
   const index = masterProjectList.indexOf(project);
   btn.setAttribute('index', index);
   if (project.status === 'filter') {
