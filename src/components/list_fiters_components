@@ -1,4 +1,6 @@
 import {
+  dateSort19,
+  dateSort91,
   numSort19, numSort91, titleSortAZ, titleSortZA,
 } from '../modules/list_filter_methods';
 import RenderToDoList from './list';
@@ -51,6 +53,30 @@ function addNumFilter(filter, name) {
   return div;
 }
 
+function addDateFilter(filter, name) {
+  const div = document.createElement('div');
+  div.classList.add('item');
+  const btn = document.createElement('button');
+  btn.setAttribute('id', `${filter}-filter`);
+  btn.classList.add('flex', 'align-center', 'gap-2', 'fill-black');
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18"><path d="M305 601V309L202 412l-66-66 217-217 217 217-66 66-105-104v293h-94Zm302 420L390 803l66-65 103 102V548h94v293l105-103 66 66-217 217Z"/></svg>${name}`;
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const filterStatus = btn.getAttribute('filter');
+    if (filterStatus === '1-9') {
+      dateSort91(filter);
+      btn.setAttribute('filter', '9-1');
+    } else {
+      dateSort19(filter);
+      btn.setAttribute('filter', '1-9');
+    }
+    RenderToDoList();
+  });
+  div.appendChild(btn);
+  return div;
+}
+
 function addCompleteFilter(filter) {
   const div = document.createElement('div');
   const btn = document.createElement('button');
@@ -78,4 +104,6 @@ function addCompleteFilter(filter) {
   return div;
 }
 
-export { addAlphaFilter, addNumFilter, addCompleteFilter };
+export {
+  addAlphaFilter, addNumFilter, addDateFilter, addCompleteFilter,
+};
