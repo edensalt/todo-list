@@ -87,8 +87,9 @@ function addPriority(item, card) {
 }
 
 function addDueDate(item, card) {
+  const { format } = require('date-fns');
   const para = document.createElement('p');
-  para.innerHTML = item.dueDate;
+  para.innerHTML = format(item.dueDate, 'MM/dd/yy');
   para.classList.add('item');
   card.appendChild(para);
 }
