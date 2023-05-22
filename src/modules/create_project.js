@@ -10,6 +10,7 @@ const projectActions = {
 const createProject = (project) => {
   const projectCat = Object.create(projectActions);
   projectCat.project = project;
+  projectCat.status = 'filter';
   projectCat.addToList();
   return projectCat;
 };

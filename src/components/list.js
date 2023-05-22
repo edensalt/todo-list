@@ -1,23 +1,51 @@
 import { masterList } from '../modules/create_list_item';
+import { masterProjectList } from '../modules/create_project';
 import {
-  addDeleteBtn, addTitle, addDescription, addDueDate, addPriority, addProject, addEditBtn, addCompleteBtn,
+  addDeleteBtn,
+  addTitle,
+  addDescription,
+  addDueDate,
+  addPriority,
+  addProject,
+  addEditBtn,
+  addCompleteBtn,
 } from './list_components';
 
 // Define master lists based on filters, e.g.
 // masterListComplete = function of completed items, etc (import from filters)
 
+function determineProjectFilter() {
+  const filteredProjects = masterProjectList.filter(
+    (project) => project.status === 'filter',
+  );
+  const filteredProjectNames = filteredProjects.map(
+    (project) => project.project,
+  );
+  return filteredProjectNames;
+}
+
 function determineFilter() {
   const main = document.querySelector('#main');
   const filterStatus = main.getAttribute('filter');
-  if (filterStatus === undefined || filterStatus === null || filterStatus === 'all') {
-    return masterList;
+  if (
+    filterStatus === undefined
+    || filterStatus === null
+    || filterStatus === 'all'
+  ) {
+    const projectFilteredItemUnfilteredML = masterList.filter((item) => determineProjectFilter().includes(item.project));
+
+    return projectFilteredItemUnfilteredML;
   }
-  const filteredMasterList = masterList.filter((item) => item.status === filterStatus);
-  return filteredMasterList;
+  const filteredMasterListItems = masterList.filter(
+    (item) => item.status === filterStatus,
+  );
+  const projectFilteredItemFilteredML = filteredMasterListItems.filter((item) => determineProjectFilter().includes(item.project));
+  return projectFilteredItemFilteredML;
 }
 
 const RenderToDoList = function () {
   const list = determineFilter();
+  console.table(list);
   const parent = document.querySelector('#items-container');
   parent.innerHTML = '';
   const container = document.createElement('div');
@@ -28,7 +56,16 @@ const RenderToDoList = function () {
     card.setAttribute('id', 'list-item');
     const index = list.indexOf(item);
     card.setAttribute('index', index);
-    card.classList.add('grid', 'grid-cols-list', 'gap-2', 'items-center', 'my-2', 'text-sm', 'bg-slate-50', 'px-8');
+    card.classList.add(
+      'grid',
+      'grid-cols-list',
+      'gap-2',
+      'items-center',
+      'my-2',
+      'text-sm',
+      'bg-slate-50',
+      'px-8',
+    );
     addCompleteBtn(item, card);
     addTitle(item, card);
     addDescription(item, card);

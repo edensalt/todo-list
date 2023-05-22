@@ -9,7 +9,8 @@ The goal of this project was to build a program organized by JS modules while fo
 - JS ES6 Modules, imports and exports
 - JS factory functions
 - If statements, object mapping
-- DOM manipulation
+- DOM manipulation (filters and sorts)
+- JS forms
 - Tailwind CSS
 - Webpack, JSON and NPM
 
@@ -17,4 +18,4 @@ The goal of this project was to build a program organized by JS modules while fo
 
 - Create projects and tasks
 - Create a new project if adding one to a task that doesn't already exist
-- Delete entire projects and their tasks, with warning
+- Delete entire projects and their tasks, with warning`
