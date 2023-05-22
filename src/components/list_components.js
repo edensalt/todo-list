@@ -90,9 +90,14 @@ function addPriority(item, card) {
 }
 
 function addDueDate(item, card) {
-  const { format } = require('date-fns');
+  const { format, isValid } = require('date-fns');
   const para = document.createElement('p');
-  para.innerHTML = `${format(item.dueDate, 'MM/dd/yy')}`;
+  if (!isValid(item.dueDate)) {
+    para.innerHTML = '';
+  } else {
+    (
+      para.innerHTML = `${format(item.dueDate, 'MM/dd/yy')}`);
+  }
   para.classList.add('item');
   card.appendChild(para);
 }

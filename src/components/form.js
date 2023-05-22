@@ -61,7 +61,7 @@ const AddItemForm = function () {
   const parent = document.querySelector('#items');
   const container = document.createElement('div');
   container.setAttribute('id', 'form-container');
-  container.classList.add('mb-10', 'px-8', 'py-2', 'bg-sky-200');
+  container.classList.add('mb-10', 'px-8', 'py-2', 'bg-sky-200', 'hover:bg-sky-300');
   parent.appendChild(container);
 
   ItemForm();
