@@ -6,7 +6,7 @@ const RenderProjectList = function () {
   parent.innerHTML = '';
   const container = document.createElement('div');
   container.setAttribute('id', 'projects-list');
-  container.classList.add('py-2', 'bg-emerald-50');
+  container.classList.add('py-2', 'bg-lime-100');
   masterProjectList.forEach((project) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'project-item');

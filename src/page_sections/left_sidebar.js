@@ -1,4 +1,5 @@
 import AddProjectForm from '../components/project_form';
+import RenderProjectHeader from '../components/project_header';
 import RenderProjectList from '../components/project_list';
 
 const LeftSideBar = function () {
@@ -18,6 +19,7 @@ const LeftSideBar = function () {
   parent.appendChild(projects);
   projects.appendChild(projectHeader);
   projects.appendChild(AddProjectForm());
+  projects.appendChild(RenderProjectHeader());
   projects.appendChild(projectList);
   projectList.appendChild(RenderProjectList());
 

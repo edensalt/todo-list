@@ -7,7 +7,7 @@ const RenderListFilters = function () {
 
   const container = document.createElement('div');
   container.setAttribute('id', 'list-filters');
-  container.classList.add('py-2', 'bg-purple-100', 'grid', 'grid-cols-list', 'gap-2', 'items-center', 'text-sm', 'px-8');
+  container.classList.add('py-2', 'bg-sky-300', 'grid', 'grid-cols-list', 'gap-2', 'items-center', 'text-sm', 'px-8', 'h-12');
   container.appendChild(addCompleteFilter('status'));
   container.appendChild(addAlphaFilter('Title', 'title'));
   container.appendChild(addAlphaFilter('Description', 'description'));
