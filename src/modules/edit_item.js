@@ -1,5 +1,7 @@
 import RenderToDoList from '../components/list';
+import HomePage from '../pages/homepage';
 import { masterList } from './create_list_item';
+import { createProject, masterProjectList } from './create_project';
 
 const addTextInput = function (container, type, item, param, current) {
   const parent = container;
@@ -19,9 +21,16 @@ const addTextInput = function (container, type, item, param, current) {
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const newValue = document.querySelector('#new-value').value;
+    const exists = masterProjectList.some((project) => project.project === newValue);
+    if (param === 'project' && !exists) {
+      createProject(newValue);
+      console.table(masterProjectList);
+    }
     item[param] = newValue;
-    RenderToDoList();
-    return masterList;
+    console.table(masterList);
+    const main = document.querySelector('#main');
+    main.innerHTML = '';
+    HomePage();
   });
 
   const cancelBtn = document.createElement('button');
@@ -47,8 +56,9 @@ const editItem = function (e) {
   const current = item[param];
 
   addTextInput(container, 'text', item, param, current);
-  return masterList;
 };
+
+//
 
 const addNumberInput = function (container, type, item, param, current) {
   const parent = container;
@@ -111,6 +121,8 @@ const editNumber = function (e) {
   addNumberInput(container, 'tel', item, param, current);
   return masterList;
 };
+
+//
 
 const addDateInput = function (container, type, item, param, current) {
   const parent = container;
