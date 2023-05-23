@@ -1,7 +1,7 @@
 import {
   createFormField, createPriorityList, createSubmitBtn, createProjectList,
 } from './form_components';
-import { createItem, masterList } from '../modules/create_list_item';
+import { createItem } from '../modules/create_list_item';
 import { createProject, masterProjectList } from '../modules/create_project';
 import HomePage from '../pages/homepage';
 
