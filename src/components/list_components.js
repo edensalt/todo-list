@@ -45,7 +45,7 @@ function addTitle(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.title;
   para.setAttribute('param', 'title');
-  para.classList.add('item', 'hover:bg-yellow-50');
+  para.classList.add('item', 'rounded-none', 'hover:bg-gray-50/50');
   para.addEventListener('click', (e) => {
     e.preventDefault();
     const targetParam = e.target.getAttribute('param');
@@ -60,7 +60,7 @@ function addDescription(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.description;
   para.setAttribute('param', 'description');
-  para.classList.add('item', 'hover:bg-yellow-50');
+  para.classList.add('item', 'rounded-none', 'h-full', 'hover:bg-gray-50/50');
   para.addEventListener('click', (e) => {
     e.preventDefault();
     const targetParam = e.target.getAttribute('param');
@@ -75,7 +75,7 @@ function addProject(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.project;
   para.setAttribute('param', 'project');
-  para.classList.add('item', 'hover:bg-yellow-50');
+  para.classList.add('item', 'rounded-none', 'hover:bg-gray-50/50');
   para.addEventListener('click', (e) => {
     const targetParam = e.target.getAttribute('param');
     if (targetParam === 'project') {
@@ -89,7 +89,7 @@ function addPriority(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.priority;
   para.setAttribute('param', 'priority');
-  para.classList.add('item', 'hover:bg-yellow-50');
+  para.classList.add('item', 'rounded-none', 'hover:bg-gray-50/50');
   para.addEventListener('click', (e) => {
     const targetParam = e.target.getAttribute('param');
     if (targetParam === 'priority') {
@@ -109,7 +109,7 @@ function addDueDate(item, card) {
       para.innerHTML = `${format(item.dueDate, 'MM/dd/yy')}`);
   }
   para.setAttribute('param', 'dueDate');
-  para.classList.add('item', 'hover:bg-yellow-50');
+  para.classList.add('item', 'rounded-none', 'hover:bg-gray-50/50');
   para.addEventListener('click', (e) => {
     const targetParam = e.target.getAttribute('param');
     if (targetParam === 'dueDate') {

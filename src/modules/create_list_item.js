@@ -22,13 +22,13 @@ const createItem = (title, description, project, priority, dueDate, status) => {
 // For starting data
 
 const date1 = new Date('2023-07-16');
-const date2 = new Date('2023-07-01');
+const date2 = new Date('2023-05-01');
 const date3 = new Date('2023-08-24');
 const date4 = new Date('2023-05-31');
 const date5 = new Date('2023-05-25');
 
 createItem('Get gift', 'Buy a notebook for birthday gift.', 'Errands', 2, date1, 'incomplete');
-createItem('Return clothes', 'Return snow pants to recreation store.', 'Errands', 3, date2, 'complete');
+createItem('Return clothes', 'Return snow pants to recreation store.', 'Errands', 3, date2, 'incomplete');
 createItem('Buy concert tickets', 'Buy tickets for Jeff Rosenstock tour.', 'Activities', 2, date3, 'incomplete');
 createItem('To-Do list', 'Complete The Odin Project to-do list.', 'Odin Project', 3, date4, 'complete');
 createItem('Bake cake', 'Bake a chocolate cake for birthday party.', 'Household', 3, date5, 'incomplete');

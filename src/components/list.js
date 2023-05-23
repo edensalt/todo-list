@@ -10,6 +10,8 @@ import {
   addCompleteBtn,
 } from './list_components';
 
+const { isPast } = require('date-fns');
+
 // Define master lists based on filters, e.g.
 // masterListComplete = function of completed items, etc (import from filters)
 
@@ -71,6 +73,10 @@ const RenderToDoList = function () {
     addPriority(item, card);
     addDueDate(item, card);
     addDeleteBtn(item, card);
+
+    if (isPast(item.dueDate)) {
+      card.classList.add('text-red-600', 'fill-red-600', 'bg-red-100');
+    }
     if (item.status === 'complete') {
       card.classList.add('text-gray-400', 'fill-gray-400', 'bg-gray-200');
     }
