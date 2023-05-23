@@ -62,11 +62,11 @@ function addEditBtn(item, card) {
 }
 
 function addTitle(item, card) {
-  const btn = document.createElement('button');
-  btn.innerHTML = item.title;
-  btn.setAttribute('param', 'title');
-  btn.classList.add('item');
-  btn.addEventListener('click', (e) => {
+  const para = document.createElement('p');
+  para.innerHTML = item.title;
+  para.setAttribute('param', 'title');
+  para.classList.add('item');
+  para.addEventListener('click', (e) => {
     console.log(e.target);
     e.preventDefault();
     const targetParam = e.target.getAttribute('param');
@@ -74,7 +74,7 @@ function addTitle(item, card) {
       editItem(e);
     }
   });
-  card.appendChild(btn);
+  card.appendChild(para);
 }
 
 function addDescription(item, card) {

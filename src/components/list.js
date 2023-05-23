@@ -23,7 +23,7 @@ function determineProjectFilter() {
   );
   return filteredProjectNames;
 }
-
+'';
 function determineFilter() {
   const main = document.querySelector('#main');
   const filterStatus = main.getAttribute('filter');
