@@ -1,9 +1,11 @@
 import gitHubLogo from '../images/github-mark-white.png';
 
 const Footer = function () {
+  const parent = document.querySelector('#parent');
+
   const footer = document.createElement('div');
   footer.setAttribute('id', 'footer');
-  footer.classList.add('fixed', 'bg-gray-800', 'text-white', 'flex', 'w-full', 'justify-center', 'items-center', 'bottom-0', 'py-2');
+  footer.classList.add('bg-gray-800', 'text-white', 'flex', 'w-full', 'justify-center', 'items-center', 'bottom-0', 'py-2');
 
   const githubLogoLink = document.createElement('a');
   githubLogoLink.href = 'https://github.com/edensalt/todo-list';
@@ -29,7 +31,7 @@ const Footer = function () {
   username.target = '_blank';
   githubLink.appendChild(username);
 
-  return footer;
+  parent.appendChild(footer);
 };
 
 export default Footer;

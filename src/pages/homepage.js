@@ -1,4 +1,3 @@
-import Footer from '../page_sections/footer';
 import LeftSideBar from '../page_sections/left_sidebar';
 import MainContent from '../page_sections/main_content';
 
@@ -7,11 +6,11 @@ const HomePage = function () {
 
   const leftSideBar = document.createElement('div');
   leftSideBar.setAttribute('id', 'left-sidebar');
-  leftSideBar.classList.add('flex-initial', 'w-[300px]', 'bg-gray-100', 'h-screen');
+  leftSideBar.classList.add('flex-initial', 'lg:w-[300px]', 'w-full', 'bg-gray-100', 'lg:h-full');
 
   const mainContent = document.createElement('div');
   mainContent.setAttribute('id', 'main-content');
-  mainContent.classList.add('flex-1', 'bg-gray-50', 'h-screen');
+  mainContent.classList.add('flex-1', 'bg-gray-50', 'lg:h-full', 'lg:mb-10');
 
   main.appendChild(leftSideBar);
   main.appendChild(mainContent);
@@ -19,8 +18,6 @@ const HomePage = function () {
   leftSideBar.appendChild(LeftSideBar());
 
   mainContent.appendChild(MainContent());
-
-  main.appendChild(Footer());
 };
 
 export default HomePage;

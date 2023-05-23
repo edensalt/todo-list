@@ -1,6 +1,7 @@
 import './style.css';
 import HomePage from './pages/homepage';
 import NavBar from './page_sections/navbar';
+import Footer from './page_sections/footer';
 
 function setContentParent() {
   const div = document.createElement('div');
@@ -12,3 +13,4 @@ function setContentParent() {
 document.body.appendChild(setContentParent());
 NavBar();
 HomePage();
+Footer();

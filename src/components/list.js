@@ -58,7 +58,8 @@ const RenderToDoList = function () {
     card.setAttribute('index', index);
     card.classList.add(
       'grid',
-      'grid-cols-list',
+      'lg:grid-cols-list',
+      'grid-cols-listSmall',
       'gap-2',
       'items-center',
       'my-2',
