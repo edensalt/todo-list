@@ -1,3 +1,4 @@
+import Footer from '../page_sections/footer';
 import LeftSideBar from '../page_sections/left_sidebar';
 import MainContent from '../page_sections/main_content';
 
@@ -18,6 +19,8 @@ const HomePage = function () {
   leftSideBar.appendChild(LeftSideBar());
 
   mainContent.appendChild(MainContent());
+
+  main.appendChild(Footer());
 };
 
 export default HomePage;
