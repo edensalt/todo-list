@@ -24,10 +24,8 @@ const addTextInput = function (container, type, item, param, current) {
     const exists = masterProjectList.some((project) => project.project === newValue);
     if (param === 'project' && !exists) {
       createProject(newValue);
-      console.table(masterProjectList);
     }
     item[param] = newValue;
-    console.table(masterList);
     const main = document.querySelector('#main');
     main.innerHTML = '';
     HomePage();
@@ -141,7 +139,9 @@ const addDateInput = function (container, type, item, param, current) {
   submitBtn.innerHTML = '&check;';
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const newValue = new Date(document.querySelector('#new-value').value);
+    const input = document.querySelector('#new-value').value;
+    const selectedDate = new Date(input);
+    const newValue = new Date(selectedDate.toLocaleString([], { timeZone: 'UTC' }));
     item[param] = newValue;
     RenderToDoList();
   });

@@ -1,4 +1,4 @@
-# To-do List - Under construction
+# to-do list
 
 To-do list for the <a href="https://www.theodinproject.com/lessons/node-path-javascript-todo-list">Odin Project: JavaScript course</a>
 
@@ -13,17 +13,12 @@ The goal of this project was to build a program organized by JS modules while fo
 - JS forms
 - Tailwind CSS, grid, flex
 - Webpack, JSON and NPM
-- Date-fns
+- Date-fns, time-zone adjustments
 
-## Features
+## Product features
 
 - Create tasks and projects
 - Edit, complete, and delete tasks
 - Filter tasks by completion status or project
 - Sort tasks by any component
 - Delete entire projects and their tasks, with warning
-
-## To do
-
-- Fix project edits
-- Fix date edits and inputs (one day early)
