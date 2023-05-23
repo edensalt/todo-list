@@ -13,7 +13,7 @@ const createItem = (title, description, project, priority, dueDate, status) => {
   item.description = description;
   item.project = project;
   item.priority = priority;
-  item.dueDate = new Date(dueDate);
+  item.dueDate = new Date(dueDate.toLocaleString([], { timeZone: 'UTC' }));
   item.status = status;
   item.addToList();
   return item;

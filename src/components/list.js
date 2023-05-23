@@ -7,7 +7,6 @@ import {
   addDueDate,
   addPriority,
   addProject,
-  addEditBtn,
   addCompleteBtn,
 } from './list_components';
 
@@ -45,7 +44,6 @@ function determineFilter() {
 
 const RenderToDoList = function () {
   const list = determineFilter();
-  console.table(list);
   const parent = document.querySelector('#items-container');
   parent.innerHTML = '';
   const container = document.createElement('div');
@@ -72,7 +70,6 @@ const RenderToDoList = function () {
     addProject(item, card);
     addPriority(item, card);
     addDueDate(item, card);
-    addEditBtn(item, card);
     addDeleteBtn(item, card);
     if (item.status === 'complete') {
       card.classList.add('text-gray-400', 'fill-gray-400', 'bg-gray-200');

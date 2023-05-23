@@ -72,7 +72,7 @@ const createSubmitBtn = function (container, type, id, innerHTML) {
   btn.type = type;
   btn.id = id;
   btn.innerHTML = innerHTML;
-  btn.classList.add('btn-complete', 'col-span-2');
+  btn.classList.add('btn-complete');
   container.appendChild(btn);
 };
 

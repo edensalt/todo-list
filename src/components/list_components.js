@@ -2,7 +2,7 @@ import removeItem from '../modules/remove_list_item';
 import { masterList } from '../modules/create_list_item';
 import RenderToDoList from './list';
 import { completeItem, incompleteItem } from '../modules/complete_list_item';
-import editItem from '../modules/edit_item';
+import { editDate, editItem, editNumber } from '../modules/edit_item';
 
 function addCompleteBtn(item, card) {
   const btn = document.createElement('button');
@@ -30,33 +30,13 @@ function addDeleteBtn(item, card) {
   btn.setAttribute('id', 'task-complete');
   const index = masterList.indexOf(item);
   btn.setAttribute('index', index);
-  btn.classList.add('fill-black');
+  btn.classList.add('fill-black', 'mx-auto');
   btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" index=${index} class="hover:fill-red-600" height="18" viewBox="0 96 960 960" width="18"><path d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z"/></svg>`;
   btn.setAttribute('index', index);
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    // Currently logic for deleting. Instead, update to logic for marking as complete.
     removeItem(e);
     RenderToDoList();
-  });
-  card.appendChild(btn);
-}
-
-function addEditBtn(item, card) {
-  const btn = document.createElement('button');
-  btn.setAttribute('id', 'edit-task');
-  btn.classList.add(
-    'fill-black',
-    'hover:fill-emerald-600',
-    'flex',
-    'justify-center',
-  );
-  const index = masterList.indexOf(item);
-  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" index="${index}" height="18" viewBox="0 96 960 960" width="18"><path d="M187 877h32l435-437-32-32-435 437v32Zm610-479L665 266l21-22q28-28 66.5-28.5T819 242l18 18q23 22 20.5 51T835 360l-38 38Zm-41 41L247 948H115V816l508-508 133 131Zm-117-15-17-16 32 32-15-16Z"/></svg>`;
-  btn.setAttribute('index', index);
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    // Edit task
   });
   card.appendChild(btn);
 }
@@ -65,9 +45,8 @@ function addTitle(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.title;
   para.setAttribute('param', 'title');
-  para.classList.add('item');
+  para.classList.add('item', 'hover:bg-yellow-50');
   para.addEventListener('click', (e) => {
-    console.log(e.target);
     e.preventDefault();
     const targetParam = e.target.getAttribute('param');
     if (targetParam === 'title') {
@@ -81,7 +60,14 @@ function addDescription(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.description;
   para.setAttribute('param', 'description');
-  para.classList.add('item');
+  para.classList.add('item', 'hover:bg-yellow-50');
+  para.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetParam = e.target.getAttribute('param');
+    if (targetParam === 'description') {
+      editItem(e);
+    }
+  });
   card.appendChild(para);
 }
 
@@ -89,7 +75,13 @@ function addProject(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.project;
   para.setAttribute('param', 'project');
-  para.classList.add('item');
+  para.classList.add('item', 'hover:bg-yellow-50');
+  para.addEventListener('click', (e) => {
+    const targetParam = e.target.getAttribute('param');
+    if (targetParam === 'project') {
+      editItem(e);
+    }
+  });
   card.appendChild(para);
 }
 
@@ -97,7 +89,13 @@ function addPriority(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.priority;
   para.setAttribute('param', 'priority');
-  para.classList.add('item');
+  para.classList.add('item', 'hover:bg-yellow-50');
+  para.addEventListener('click', (e) => {
+    const targetParam = e.target.getAttribute('param');
+    if (targetParam === 'priority') {
+      editNumber(e);
+    }
+  });
   card.appendChild(para);
 }
 
@@ -111,14 +109,19 @@ function addDueDate(item, card) {
       para.innerHTML = `${format(item.dueDate, 'MM/dd/yy')}`);
   }
   para.setAttribute('param', 'dueDate');
-  para.classList.add('item');
+  para.classList.add('item', 'hover:bg-yellow-50');
+  para.addEventListener('click', (e) => {
+    const targetParam = e.target.getAttribute('param');
+    if (targetParam === 'dueDate') {
+      editDate(e);
+    }
+  });
   card.appendChild(para);
 }
 
 export {
   addCompleteBtn,
   addDeleteBtn,
-  addEditBtn,
   addTitle,
   addDescription,
   addProject,

@@ -31,9 +31,6 @@ const CheckProject = function () {
   const selectedProject = document.querySelector('#project').value;
   const exists = masterProjectList.some((project) => project.project === selectedProject);
   if (!exists) {
-    if (selectedProject === '') {
-      return;
-    }
     createProject(selectedProject);
   }
 };
