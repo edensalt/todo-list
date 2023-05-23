@@ -20,7 +20,7 @@ const ItemForm = function () {
   createFormField(form, 'text', 'title', 'title', 'task title here');
   createFormField(form, 'text', 'description', 'description', 'task description here');
   createProjectList(form, 'project-list', 'project', 'project');
-  createPriorityList(form, 'priority-list', 'priority', 'priority', 'tel', 1, 2, 3);
+  createPriorityList(form, 'priority-list', 'priority', 'priority', 'tel');
   createFormField(form, 'date', 'due-date', 'due-date', '');
   createSubmitBtn(form, 'submit', 'submit-button', 'Add item');
 

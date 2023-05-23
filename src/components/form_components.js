@@ -17,30 +17,30 @@ const createPriorityList = function (
   name,
   id,
   type,
-  value1,
-  value2,
-  value3,
 ) {
-  const field = document.createElement('input');
+  const field = document.createElement('select');
   field.setAttribute('list', list);
   field.name = name;
   field.id = id;
-  field.type = type;
-  field.classList.add('item');
-  const datalist = document.createElement('datalist');
-  datalist.id = list;
+  field.classList.add('item', 'gap-0');
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = 'Priority';
   const option1 = document.createElement('option');
-  option1.value = value1;
+  option1.value = 1;
+  option1.textContent = '1';
   const option2 = document.createElement('option');
-  option2.value = value2;
+  option2.value = 2;
+  option2.textContent = '2';
   const option3 = document.createElement('option');
-  option3.value = value3;
+  option3.value = 3;
+  option3.textContent = '3';
 
   container.appendChild(field);
-  field.appendChild(datalist);
-  datalist.appendChild(option1);
-  datalist.appendChild(option2);
-  datalist.appendChild(option3);
+  field.appendChild(placeholder);
+  field.appendChild(option1);
+  field.appendChild(option2);
+  field.appendChild(option3);
 };
 
 const createProjectList = function (
@@ -50,20 +50,21 @@ const createProjectList = function (
   id,
   type,
 ) {
-  const field = document.createElement('input');
+  const field = document.createElement('select');
   field.setAttribute('list', list);
   field.name = name;
   field.id = id;
-  field.type = type;
-  field.classList.add('item');
-  const datalist = document.createElement('datalist');
-  datalist.id = list;
+  field.classList.add('item', 'gap-0');
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = 'Project';
   container.appendChild(field);
-  field.appendChild(datalist);
+  field.appendChild(placeholder);
   masterProjectList.forEach((project) => {
     const option = document.createElement('option');
     option.value = project.project;
-    datalist.appendChild(option);
+    option.textContent = project.project;
+    field.appendChild(option);
   });
 };
 

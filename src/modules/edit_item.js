@@ -58,26 +58,29 @@ const editItem = function (e) {
 
 //
 
-const addNumberInput = function (container, type, item, param, current) {
+const addNumberInput = function (container, item, param, current) {
   const parent = container;
   parent.innerHTML = '';
 
   const form = document.createElement('form');
   form.classList.add('flex', 'gap-1', 'items-center');
-  const field = document.createElement('input');
-  field.type = type;
+  const field = document.createElement('select');
   field.placeholder = current;
   field.setAttribute('id', 'new-value');
-  field.classList.add('w-full', 'h-full', 'bg-transparent');
+  field.classList.add('w-full', 'h-full', 'bg-transparent', 'gap-0');
 
-  const datalist = document.createElement('datalist');
-  datalist.id = 'priority-list';
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = '-';
   const option1 = document.createElement('option');
   option1.value = 1;
+  option1.textContent = '1';
   const option2 = document.createElement('option');
   option2.value = 2;
+  option2.textContent = '2';
   const option3 = document.createElement('option');
   option3.value = 3;
+  option3.textContent = '3';
 
   const submitBtn = document.createElement('button');
   submitBtn.type = 'submit';
@@ -99,10 +102,10 @@ const addNumberInput = function (container, type, item, param, current) {
 
   parent.appendChild(form);
   form.appendChild(field);
-  form.appendChild(datalist);
-  datalist.appendChild(option1);
-  datalist.appendChild(option2);
-  datalist.appendChild(option3);
+  field.appendChild(placeholder);
+  field.appendChild(option1);
+  field.appendChild(option2);
+  field.appendChild(option3);
   form.appendChild(submitBtn);
   form.appendChild(cancelBtn);
 
@@ -116,7 +119,7 @@ const editNumber = function (e) {
   const param = e.target.getAttribute('param');
   const current = item[param];
 
-  addNumberInput(container, 'tel', item, param, current);
+  addNumberInput(container, item, param, current);
   return masterList;
 };
 
