@@ -2,6 +2,7 @@ import removeItem from '../modules/remove_list_item';
 import { masterList } from '../modules/create_list_item';
 import RenderToDoList from './list';
 import { completeItem, incompleteItem } from '../modules/complete_list_item';
+import editItem from '../modules/edit_item';
 
 function addCompleteBtn(item, card) {
   const btn = document.createElement('button');
@@ -61,15 +62,25 @@ function addEditBtn(item, card) {
 }
 
 function addTitle(item, card) {
-  const para = document.createElement('p');
-  para.innerHTML = item.title;
-  para.classList.add('item');
-  card.appendChild(para);
+  const btn = document.createElement('button');
+  btn.innerHTML = item.title;
+  btn.setAttribute('param', 'title');
+  btn.classList.add('item');
+  btn.addEventListener('click', (e) => {
+    console.log(e.target);
+    e.preventDefault();
+    const targetParam = e.target.getAttribute('param');
+    if (targetParam === 'title') {
+      editItem(e);
+    }
+  });
+  card.appendChild(btn);
 }
 
 function addDescription(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.description;
+  para.setAttribute('param', 'description');
   para.classList.add('item');
   card.appendChild(para);
 }
@@ -77,6 +88,7 @@ function addDescription(item, card) {
 function addProject(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.project;
+  para.setAttribute('param', 'project');
   para.classList.add('item');
   card.appendChild(para);
 }
@@ -84,7 +96,7 @@ function addProject(item, card) {
 function addPriority(item, card) {
   const para = document.createElement('p');
   para.innerHTML = item.priority;
-  para.classList.add('item');
+  para.setAttribute('param', 'priority');
   para.classList.add('item');
   card.appendChild(para);
 }
@@ -98,6 +110,7 @@ function addDueDate(item, card) {
     (
       para.innerHTML = `${format(item.dueDate, 'MM/dd/yy')}`);
   }
+  para.setAttribute('param', 'dueDate');
   para.classList.add('item');
   card.appendChild(para);
 }

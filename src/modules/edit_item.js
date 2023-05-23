@@ -1,53 +1,52 @@
+import RenderToDoList from '../components/list';
 import { masterList } from './create_list_item';
-import HomePage from '../pages/homepage';
 
-// Add warning about removing projects
+const cancelEdit = function () {
 
-function editItemPopup(item) {
-  const parent = document.querySelector('#parent');
-  const popup = document.createElement('div');
-  popup.setAttribute('id', 'edit-task');
-  popup.classList.add('fixed', 'top-1/2', 'left-1/2', '-translate-x-1/2', '-translate-y-1/2', 'bg-red-300', 'shadow-lg', 'w-1/3', 'p-8', 'rounded-lg', 'text-center');
+};
+
+const addTextInput = function (container, item, param, current) {
+  const parent = container;
+  parent.innerHTML = '';
 
   const form = document.createElement('form');
-  form.setAttribute('id', 'edit-form');
-  form.classList.add('grid', 'grid-cols-list', 'gap-2');
+  form.classList.add('flex', 'gap-1');
+  const field = document.createElement('input');
+  field.type = 'text';
+  field.placeholder = current;
+  field.classList.add('w-full');
 
-  popup.appendChild(form);
+  const submitBtn = document.createElement('button');
+  submitBtn.type = 'submit';
+  submitBtn.innerHTML = '&check;';
 
   const cancelBtn = document.createElement('button');
-  cancelBtn.innerHTML = 'Cancel';
-  cancelBtn.classList.add('btn-complete', 'mx-2', 'bg-neutral-600', 'hover:bg-neutral-500');
+  cancelBtn.innerHTML = 'X';
+  cancelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    RenderToDoList();
+  });
 
-  const confirmBtn = document.createElement('button');
-  confirmBtn.innerHTML = 'Delete project';
-  confirmBtn.classList.add('btn-complete', 'mx-2', 'bg-red-600', 'hover:bg-red-500');
+  parent.appendChild(form);
+  form.appendChild(field);
+  form.appendChild(submitBtn);
+  form.appendChild(cancelBtn);
 
-  parent.appendChild(popup);
-  popup.appendChild(form);
-  // form.appendchild
-
-  //   cancelBtn.addEventListener('click', () => popup.remove());
-
-//   confirmBtn.addEventListener('click', () => {
-//     for (let i = masterList.length - 1; i >= 0; i--) {
-//       if (masterList[i].project === masterProjectList[project].project) {
-//         masterList.splice(i, 1);
-//       }
-//     }
-//     masterProjectList.splice(project, 1);
-//     popup.remove();
-//     const main = document.querySelector('#main');
-//     main.innerHTML = '';
-//     HomePage();
-//   });
-}
-
-// const confirmRemoveProject
+  return form;
+};
 
 const editItem = function (e) {
-  const item = e.target.parentNode.getAttribute('index');
-  editItemPopup(item);
+  const container = e.target;
+  const index = e.target.parentNode.getAttribute('index');
+  const item = masterList[index];
+  const param = e.target.getAttribute('param');
+  const current = item[param];
+  console.log(index);
+  console.log(item);
+  console.log(param);
+  console.log(current);
+  addTextInput(container, item, param, current);
+  return masterList;
 };
 
 export default editItem;
