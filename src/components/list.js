@@ -77,7 +77,7 @@ const RenderToDoList = function () {
       card.classList.add('text-red-600', 'fill-red-600', 'bg-red-100');
     }
     if (item.status === 'complete') {
-      card.classList.add('text-gray-400', 'fill-gray-400', 'bg-gray-200');
+      card.classList.add('text-gray-400', 'fill-gray-400', 'bg-gray-200/40');
     }
     container.appendChild(card);
   });

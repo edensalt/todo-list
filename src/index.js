@@ -6,7 +6,7 @@ import Footer from './page_sections/footer';
 function setContentParent() {
   const div = document.createElement('div');
   div.setAttribute('id', 'parent');
-  div.classList.add('min-h-screen', 'bg-gray-100');
+  div.classList.add('min-h-screen', 'bg-orange-100');
   return div;
 }
 

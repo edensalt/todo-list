@@ -7,7 +7,7 @@ const ProjectForm = function () {
 
   const form = document.createElement('form');
   form.setAttribute('id', 'project-form');
-  form.classList.add('flex', 'gap-1', 'py-2', 'px-6', 'mb-2', 'hover:bg-lime-300/20');
+  form.classList.add('flex', 'gap-1', 'py-2', 'px-6', 'mb-2');
 
   container.appendChild(form);
 
