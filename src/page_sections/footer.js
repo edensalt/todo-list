@@ -5,7 +5,7 @@ const Footer = function () {
 
   const footer = document.createElement('div');
   footer.setAttribute('id', 'footer');
-  footer.classList.add('bg-gray-800', 'text-white', 'flex', 'w-full', 'justify-center', 'items-center', 'bottom-0', 'py-2');
+  footer.classList.add('lg:fixed', 'relative', 'bg-gray-600', 'text-white', 'flex', 'w-full', 'justify-center', 'items-center', 'bottom-0', 'py-2', 'text-xs');
 
   const githubLogoLink = document.createElement('a');
   githubLogoLink.href = 'https://github.com/edensalt/todo-list';
@@ -16,7 +16,7 @@ const Footer = function () {
   github.src = gitHubLogo;
   github.setAttribute('id', 'github-logo');
   github.setAttribute('alt', 'github logo');
-  github.classList.add('h-8', 'mr-4');
+  github.classList.add('h-6', 'mr-4');
   githubLogoLink.appendChild(github);
 
   const githubLink = document.createElement('a');

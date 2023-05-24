@@ -50,7 +50,6 @@ const RenderToDoList = function () {
   parent.innerHTML = '';
   const container = document.createElement('div');
   container.setAttribute('id', 'items-list');
-  container.classList.add('py-2', 'bg-sky-100');
   list.forEach((item) => {
     const card = document.createElement('div');
     card.setAttribute('id', 'list-item');
@@ -61,10 +60,9 @@ const RenderToDoList = function () {
       'lg:grid-cols-list',
       'grid-cols-listSmall',
       'gap-2',
+      'py-1',
       'items-center',
-      'my-2',
-      'text-sm',
-      'bg-slate-50',
+      'text-xs',
       'px-8',
     );
     addCompleteBtn(item, card);

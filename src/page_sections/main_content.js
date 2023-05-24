@@ -10,7 +10,7 @@ const MainContent = function () {
 
   const itemsHeader = document.createElement('h2');
   itemsHeader.setAttribute('id', 'items-header');
-  itemsHeader.classList.add('text-3xl', 'flex', 'justify-center', 'py-5', 'font-handwriting');
+  itemsHeader.classList.add('text-2xl', 'flex', 'justify-center', 'py-2', 'font-handwriting');
   itemsHeader.innerHTML = 'Items';
 
   const itemsContainer = document.createElement('div');

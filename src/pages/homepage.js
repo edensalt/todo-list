@@ -10,7 +10,7 @@ const HomePage = function () {
 
   const mainContent = document.createElement('div');
   mainContent.setAttribute('id', 'main-content');
-  mainContent.classList.add('flex-1', 'bg-gray-50', 'lg:h-full');
+  mainContent.classList.add('flex-1', 'bg-gray-100', 'lg:h-full');
 
   main.appendChild(leftSideBar);
   main.appendChild(mainContent);

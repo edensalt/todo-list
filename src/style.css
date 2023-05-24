@@ -10,9 +10,15 @@
 
 @layer components {
     .btn-complete {
-        @apply inline-flex items-center justify-center gap-x-1.5 rounded-md bg-emerald-700 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+        @apply inline-flex items-center justify-center bg-emerald-700 py-1 px-1 font-semibold text-xs text-white hover:bg-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
     }
     .item {
-        @apply py-1 px-3 text-sm rounded-md text-start
+        @apply px-2 text-xs text-start
+    }
+    .form-item {
+        @apply px-2 text-xs text-start
+    }
+    .filter-btn {
+        @apply flex items-center gap-2 fill-black hover:fill-gray-700 hover:text-gray-700
     }
 }

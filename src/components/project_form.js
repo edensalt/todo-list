@@ -7,17 +7,17 @@ const ProjectForm = function () {
 
   const form = document.createElement('form');
   form.setAttribute('id', 'project-form');
-  form.classList.add('flex', 'gap-2', 'bg-lime-200', 'py-2', 'px-8', 'hover:bg-lime-300');
+  form.classList.add('flex', 'gap-1', 'py-2', 'px-6', 'mb-2', 'hover:bg-lime-300/20');
 
   container.appendChild(form);
 
   createFormField(form, 'text', 'project-cat', 'project-cat', 'new project');
   const projectInput = document.querySelector('#project-cat');
-  projectInput.classList.add('w-[100px]', 'flex-1', 'rounded-md');
+  projectInput.classList.add('form-item', 'w-[120px]', 'flex-1');
 
   createSubmitBtn(form, 'submit', 'proj-submit-button', 'Add');
   const projectSubmit = document.querySelector('#proj-submit-button');
-  projectSubmit.classList.add('flex-0');
+  projectSubmit.classList.add('flex-0', 'btn-complete');
 
   return form;
 };
@@ -40,7 +40,7 @@ const AddProjectForm = function () {
   const parent = document.querySelector('#projects');
   const container = document.createElement('div');
   container.setAttribute('id', 'proj-form-container');
-  container.classList.add('mb-10');
+  container.classList.add('form-item');
   parent.appendChild(container);
 
   ProjectForm();

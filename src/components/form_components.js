@@ -3,7 +3,7 @@ import { masterProjectList } from '../modules/create_project';
 const createFormField = function (container, type, id, name, placeholder) {
   const field = document.createElement('input');
   field.type = type;
-  field.classList.add('item');
+  field.classList.add('form-item');
   field.id = id;
   field.name = name;
   field.placeholder = placeholder;
@@ -16,13 +16,12 @@ const createPriorityList = function (
   list,
   name,
   id,
-  type,
 ) {
   const field = document.createElement('select');
   field.setAttribute('list', list);
   field.name = name;
   field.id = id;
-  field.classList.add('item', 'gap-0');
+  field.classList.add('form-item', 'gap-0');
   const placeholder = document.createElement('option');
   placeholder.value = '';
   placeholder.textContent = 'Priority';
@@ -54,7 +53,7 @@ const createProjectList = function (
   field.setAttribute('list', list);
   field.name = name;
   field.id = id;
-  field.classList.add('item', 'gap-0');
+  field.classList.add('form-item', 'gap-0');
   const placeholder = document.createElement('option');
   placeholder.value = '';
   placeholder.textContent = 'Project';

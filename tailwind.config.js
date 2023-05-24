@@ -7,7 +7,7 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        list: '30px minmax(120px, 1fr) minmax(180px, 2fr) 120px 90px 90px 90px',
+        list: '30px minmax(120px, 1fr) minmax(180px, 2fr) 120px 90px 90px 75px',
         listSmall: '1fr minmax(120px, 1fr) minmax(120px, 1fr) 1fr 1fr 1fr 1fr 1fr',
         main: '1fr 3fr',
       },

@@ -2,7 +2,7 @@ const RenderProjectHeader = function () {
   const parent = document.querySelector('#projects');
 
   const container = document.createElement('div');
-  container.classList.add('flex', 'py-2', 'bg-lime-300', 'gap-2', 'items-center', 'text-sm', 'px-8', 'h-12');
+  container.classList.add('flex', 'py-1', 'gap-2', 'items-center', 'text-sm', 'px-8', 'h-8');
   const div = document.createElement('div');
   const symbol = document.createElement('div');
   symbol.classList.add('flex', 'align-center', 'gap-2', 'fill-black');

@@ -10,7 +10,7 @@ const LeftSideBar = function () {
 
   const projectHeader = document.createElement('h2');
   projectHeader.setAttribute('id', 'project-header');
-  projectHeader.classList.add('text-3xl', 'flex', 'justify-center', 'py-5', 'font-handwriting');
+  projectHeader.classList.add('text-2xl', 'flex', 'justify-center', 'py-2', 'font-handwriting');
   projectHeader.innerHTML = 'Projects';
 
   const projectList = document.createElement('div');
