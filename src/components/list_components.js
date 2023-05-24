@@ -7,7 +7,7 @@ import { editDate, editItem, editNumber } from '../modules/edit_item';
 function addCompleteBtn(item, card) {
   const btn = document.createElement('button');
   btn.setAttribute('id', 'task-complete');
-  btn.classList.add('fill-black', 'hover:fill-emerald-600');
+  btn.classList.add('fill-black', 'hover:fill-sky-600');
   const index = masterList.indexOf(item);
   btn.setAttribute('index', index);
   if (item.status === 'incomplete') {
