@@ -49,6 +49,7 @@ const RenderToDoList = function () {
   const parent = document.querySelector('#items-container');
   parent.innerHTML = '';
   const container = document.createElement('div');
+  container.classList.add('py-2');
   container.setAttribute('id', 'items-list');
   list.forEach((item) => {
     const card = document.createElement('div');
