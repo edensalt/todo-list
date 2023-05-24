@@ -10,15 +10,15 @@
 
 @layer components {
     .btn-complete {
-        @apply inline-flex items-center justify-center bg-sky-400 py-1 px-1 font-semibold text-xs text-white hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+        @apply inline-flex items-center justify-center bg-sky-500 py-1 px-1 font-semibold text-xs text-white hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
     }
     .item {
         @apply px-2 text-xs text-start
     }
     .form-item {
-        @apply px-2 text-xs text-start
+        @apply px-2 text-xs text-start bg-white/70
     }
     .filter-btn {
-        @apply flex items-center gap-2 fill-black hover:fill-orange-500 hover:text-orange-500
+        @apply flex items-center gap-2 fill-black hover:fill-sky-500 hover:text-sky-500
     }
 }

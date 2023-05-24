@@ -74,10 +74,10 @@ const RenderToDoList = function () {
     addDeleteBtn(item, card);
 
     if (isPast(item.dueDate)) {
-      card.classList.add('text-red-600', 'fill-red-600', 'bg-red-100');
+      card.classList.add('text-red-600', 'fill-red-600');
     }
     if (item.status === 'complete') {
-      card.classList.add('text-gray-400', 'fill-gray-400', 'bg-gray-200/40');
+      card.classList.add('text-gray-400', 'fill-gray-400');
     }
     container.appendChild(card);
   });
