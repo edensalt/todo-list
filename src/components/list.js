@@ -74,12 +74,12 @@ const RenderToDoList = function () {
     addDueDate(item, card);
     addDeleteBtn(item, card);
 
-    if (isPast(item.dueDate)) {
-      card.classList.add('text-red-600', 'fill-red-600');
-    }
     if (item.status === 'complete') {
       card.classList.add('text-gray-400', 'fill-gray-400');
+    } else if (isPast(item.dueDate)) {
+      card.classList.add('text-red-600', 'fill-red-600');
     }
+
     container.appendChild(card);
   });
   parent.appendChild(container);
