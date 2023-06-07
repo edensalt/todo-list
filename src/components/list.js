@@ -12,9 +12,6 @@ import {
 
 const { isPast } = require('date-fns');
 
-// Define master lists based on filters, e.g.
-// masterListComplete = function of completed items, etc (import from filters)
-
 function determineProjectFilter() {
   const filteredProjects = masterProjectList.filter(
     (project) => project.status === 'filter',
@@ -24,7 +21,7 @@ function determineProjectFilter() {
   );
   return filteredProjectNames;
 }
-'';
+
 function determineFilter() {
   const main = document.querySelector('#main');
   const filterStatus = main.getAttribute('filter');

@@ -3,6 +3,7 @@ const NavBar = function () {
 
   const navBar = document.createElement('div');
   navBar.setAttribute('id', 'navbar');
+  navBar.classList.add('bg-slate-100');
 
   const title = document.createElement('h1');
   title.setAttribute('id', 'header');

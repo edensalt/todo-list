@@ -26,6 +26,7 @@ const addTextInput = function (container, type, item, param, current) {
       createProject(newValue);
     }
     item[param] = newValue;
+    localStorage.setItem('masterlist', JSON.stringify(masterList));
     const main = document.querySelector('#main');
     main.innerHTML = '';
     HomePage();
@@ -42,7 +43,6 @@ const addTextInput = function (container, type, item, param, current) {
   form.appendChild(field);
   form.appendChild(submitBtn);
   form.appendChild(cancelBtn);
-
   return form;
 };
 
@@ -54,6 +54,7 @@ const editItem = function (e) {
   const current = item[param];
 
   addTextInput(container, 'text', item, param, current);
+  return masterList;
 };
 
 //
@@ -89,6 +90,7 @@ const addNumberInput = function (container, item, param, current) {
     e.preventDefault();
     const newValue = parseFloat(document.querySelector('#new-value').value);
     item[param] = newValue;
+    localStorage.setItem('masterlist', JSON.stringify(masterList));
     RenderToDoList();
     return masterList;
   });
@@ -146,6 +148,7 @@ const addDateInput = function (container, type, item, param, current) {
     const selectedDate = new Date(input);
     const newValue = new Date(selectedDate.toLocaleString([], { timeZone: 'UTC' }));
     item[param] = newValue;
+    localStorage.setItem('masterlist', JSON.stringify(masterList));
     RenderToDoList();
   });
 

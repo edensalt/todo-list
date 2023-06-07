@@ -1,8 +1,25 @@
-const masterProjectList = [];
+let masterProjectList = [];
+
+function populateProjectStorage() {
+  localStorage.setItem('masterprojectlist', JSON.stringify(masterProjectList));
+}
+
+function setProjectList() {
+  const storageList = localStorage.getItem('masterprojectlist');
+  const jsonList = JSON.parse(storageList);
+  return jsonList;
+}
+
+if (!localStorage.getItem('masterprojectlist')) {
+  populateProjectStorage();
+} else {
+  masterProjectList = setProjectList();
+}
 
 const projectActions = {
   addToList() {
     masterProjectList.push(this);
+    populateProjectStorage();
     return masterProjectList;
   },
 };

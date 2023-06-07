@@ -33,14 +33,17 @@ function removeProjectWarning(project) {
     for (let i = masterList.length - 1; i >= 0; i--) {
       if (masterList[i].project === masterProjectList[project].project) {
         masterList.splice(i, 1);
+        localStorage.setItem('masterlist', JSON.stringify(masterList));
       }
     }
     masterProjectList.splice(project, 1);
+    localStorage.setItem('masterprojectlist', JSON.stringify(masterProjectList));
     popup.remove();
     const main = document.querySelector('#main');
     main.innerHTML = '';
     HomePage();
   });
+  return masterList;
 }
 
 // const confirmRemoveProject

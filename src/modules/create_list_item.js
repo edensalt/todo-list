@@ -1,8 +1,25 @@
-const masterList = [];
+let masterList = [];
+
+function populateStorage() {
+  localStorage.setItem('masterlist', JSON.stringify(masterList));
+}
+
+function setList() {
+  const storageList = localStorage.getItem('masterlist');
+  const jsonList = JSON.parse(storageList);
+  return jsonList;
+}
+
+if (!localStorage.getItem('masterlist')) {
+  populateStorage();
+} else {
+  masterList = setList();
+}
 
 const itemActions = {
   addToList() {
     masterList.push(this);
+    populateStorage();
     return masterList;
   },
 };
