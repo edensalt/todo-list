@@ -49,3 +49,9 @@ The goal of this project was to build a program organized by JS modules while fo
 - Responsive design for smaller screens (less ideal for 600-1000px wide; not ideal for <600px wide)
 
 <img src="./readme_images/resizing.gif" alt="recording of responsive design for smaller screens">
+
+## Product design
+
+The goal of this product design was simplicity with intuitive features that require little to no text instruction.
+
+<img src="./readme_images/design.png" alt="sketch of app design">
