@@ -1,6 +1,9 @@
 import { format } from 'date-fns';
 
 const DateConversion = function (date) {
+  if (date === undefined || date === null || date === '') {
+    return '';
+  }
   const year = date.split('-')[0];
   const month = date.split('-')[1];
   const day = date.split('-')[2].substring(0, 2);
