@@ -1,3 +1,4 @@
+import { isPast } from 'date-fns';
 import { masterList } from '../modules/create_list_item';
 import { masterProjectList } from '../modules/create_project';
 import {
@@ -9,8 +10,6 @@ import {
   addProject,
   addCompleteBtn,
 } from './list_components';
-
-const { isPast } = require('date-fns');
 
 function determineProjectFilter() {
   const filteredProjects = masterProjectList.filter(
@@ -71,9 +70,11 @@ const RenderToDoList = function () {
     addDueDate(item, card);
     addDeleteBtn(item, card);
 
+    const pastBoolean = isPast(new Date(item.dueDate));
+
     if (item.status === 'complete') {
       card.classList.add('text-gray-400', 'fill-gray-400');
-    } else if (isPast(item.dueDate)) {
+    } else if (pastBoolean) {
       card.classList.add('text-red-600', 'fill-red-600');
     }
 
