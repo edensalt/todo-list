@@ -13,7 +13,7 @@ const RenderListFilters = function () {
   container.appendChild(addAlphaFilter('Description', 'description'));
   container.appendChild(addAlphaFilter('Project', 'project'));
   container.appendChild(addNumFilter('priority', ''));
-  container.appendChild(addDateFilter('dueDate', 'Date'));
+  container.appendChild(addDateFilter('dueDate', 'date'));
 
   parent.appendChild(container);
 
