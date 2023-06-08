@@ -1,5 +1,6 @@
 node_modules
 *.local
+readme_images
 
 # Editor directories and files
 .vscode/*
