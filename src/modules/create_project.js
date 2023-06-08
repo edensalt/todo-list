@@ -32,10 +32,4 @@ const createProject = (project) => {
   return projectCat;
 };
 
-// createProject('Activities');
-// createProject('Errands');
-// createProject('Household');
-// createProject('Odin Project');
-// createProject('Work');
-
 export { createProject, masterProjectList };
