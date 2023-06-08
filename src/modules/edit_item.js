@@ -145,9 +145,7 @@ const addDateInput = function (container, type, item, param, current) {
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const input = document.querySelector('#new-value').value;
-    const selectedDate = new Date(input);
-    const newValue = new Date(selectedDate.toLocaleString([], { timeZone: 'UTC' }));
-    item[param] = newValue;
+    item[param] = input;
     localStorage.setItem('masterlist', JSON.stringify(masterList));
     RenderToDoList();
   });

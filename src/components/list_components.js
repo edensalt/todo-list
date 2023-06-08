@@ -3,6 +3,7 @@ import { masterList } from '../modules/create_list_item';
 import RenderToDoList from './list';
 import { completeItem, incompleteItem } from '../modules/complete_list_item';
 import { editDate, editItem, editNumber } from '../modules/edit_item';
+import DateConversion from '../modules/date_conversion';
 
 function addCompleteBtn(item, card) {
   const btn = document.createElement('button');
@@ -100,14 +101,10 @@ function addPriority(item, card) {
 }
 
 function addDueDate(item, card) {
-  const { format, isValid } = require('date-fns');
   const para = document.createElement('p');
-  if (!isValid(item.dueDate)) {
-    para.innerHTML = '';
-  } else {
-    (
-      para.innerHTML = `${format(item.dueDate, 'MM/dd/yy')}`);
-  }
+  const date = item.dueDate;
+  const formattedDate = DateConversion(date);
+  para.innerHTML = formattedDate;
   para.setAttribute('param', 'dueDate');
   para.classList.add('item', 'rounded-none', 'hover:bg-white/50');
   para.addEventListener('click', (e) => {

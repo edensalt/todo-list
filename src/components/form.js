@@ -44,8 +44,7 @@ const AddItem = function () {
     const project = document.querySelector('#project').value;
     CheckProject();
     const priority = document.querySelector('#priority').value;
-    const selectedDate = document.querySelector('#due-date').value;
-    const dueDate = new Date(selectedDate);
+    const dueDate = document.querySelector('#due-date').value;
     createItem(title, description, project, priority, dueDate, 'incomplete');
     const form = document.querySelector('#item-form');
     form.reset();
@@ -64,6 +63,7 @@ const AddItemForm = function () {
 
   ItemForm();
   AddItem();
+
   return container;
 };
 

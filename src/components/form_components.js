@@ -47,7 +47,6 @@ const createProjectList = function (
   list,
   name,
   id,
-  type,
 ) {
   const field = document.createElement('select');
   field.setAttribute('list', list);
