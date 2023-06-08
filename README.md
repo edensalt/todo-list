@@ -14,8 +14,10 @@ The goal of this project was to build a program organized by JS modules while fo
 - DOM manipulation (filters and sorts)
 - JS forms
 - Tailwind CSS, grid, flex, responsive design
+- Saving data to local storage
 - Webpack, JSON and NPM
-- Date-fns, time-zone adjustments
+- date-fns for date formatting
+
 
 ## Product features
 
